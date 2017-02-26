@@ -20,16 +20,25 @@ npm install icecat --save
 ## 3) Basic usage
 
 ```js
-var Icecat = require('icecat');
+const icecat = require('icecat');
 
-var IcecatInstance = new Icecat(username, password, lang, ean);
+Icecat = new icecat('username', 'password');
+
+// Language: en, EAN: 4948570114344 
+Icecat.openCatalog.getProduct('en', '4948570114344').then(function (product) {
+    console.log('Contents: ' + product.getLongDescription());
+}).catch(function (reason) {
+    console.error('Error or timeout', reason);
+});
 ```
 
 
+# About Icecat
 
-More about Icecat services:
-- http://icecat.us/menu/services/index.html
-
+| Icecat           | Url                                       |
+|------------------|-------------------------------------------|
+| services         | http://icecat.us/menu/services/index.html |
+| product info     | http://icecat.us/                         | 
 
 # License
 [MIT License](https://github.com/GreenCore/icecat/blob/master/LICENSE)
