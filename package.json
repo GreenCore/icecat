@@ -1,0 +1,33 @@
+{
+  "name": "icecat",
+  "version": "0.0.2",
+  "description": "Node.JS library to communicate with the Icecat API",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GreenCore/icecat.git"
+  },
+  "keywords": [
+    "icecat",
+    "product",
+    "information",
+    "api",
+    "ean",
+    "image",
+    "description"
+  ],
+  "author": "GreenCore",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/GreenCore/icecat/issues"
+  },
+  "homepage": "https://github.com/GreenCore/icecat#readme",
+  "dependencies": {
+    "bluebird": "^3.4.7",
+    "https": "^1.0.0",
+    "xml2js": "^0.4.17"
+  }
+}
