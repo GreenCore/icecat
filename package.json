@@ -1,6 +1,6 @@
 {
   "name": "icecat",
-  "version": "0.0.3",
+  "version": "0.0.5",
   "description": "Node.JS library to communicate with the Icecat API",
   "main": "index.js",
   "scripts": {

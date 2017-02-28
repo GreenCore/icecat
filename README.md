@@ -2,7 +2,8 @@
 [![Version][npm-image]][npm-url] ![License][license-image]
 
 
-**Work In Progress**
+With this package you can read the worldwide product information data from Icecat. This product information comes from editors like participating manufacturers. You can use this package for comparison websites, online shopping directories or enterprise resource planning systems. 
+
 
 
 # Getting started
@@ -22,16 +23,71 @@ npm install icecat --save
 ```js
 const icecat = require('icecat');
 
-Icecat = new icecat('username', 'password');
+const icecatClient = new icecat('username', 'password');
 
-// Language: en, EAN: 4948570114344 
-Icecat.openCatalog.getProduct('en', '4948570114344').then(function (product) {
-    console.log('Contents: ' + product.getLongDescription());
+// Language: en, GTIN: 4948570114344 (GTIN: EAN, UPC or JAN) 
+icecatClient.openCatalog.getProduct('en', '4948570114344').then(function (product) {
+    console.log('Description: ' + product.getLongDescription());
+    
+    const productImages = product.getImages();
+
+    console.log('Product images:');
+    for (let i in productImages) {
+        console.log(productImages[i].TumbImg);
+    }
+    
 }).catch(function (reason) {
     console.error('Error or timeout', reason);
 });
 ```
 
+# Product info
+
+getReturnCode
+- returnCode.FAIL
+- returnCode.SUCCESS
+
+getName
+returns Product Name {string}
+
+getTitle
+returns Product Title {string}
+
+getReleaseDate
+returns Product Release Date YYYY-MM-DD {string}
+
+getLongDescription
+returns {string}
+
+getShortDescription
+returns {string}
+
+getProductInfoPDFurl
+returns {string}
+
+getProductManualPDFurl
+returns {string}
+
+getProductUrl
+returns {string}
+
+getSupplier
+returns {string}
+
+getCategory
+returns {string}
+
+getEan
+returns {string}
+
+getImages
+returns {array}
+
+getSpecifications
+returns {array}
+
+getMultimediaObjects
+returns {Array}
 
 # About Icecat
 
