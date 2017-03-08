@@ -25,8 +25,8 @@ const icecat = require('icecat');
 
 const icecatClient = new icecat('username', 'password');
 
-// Language: en, GTIN: 4948570114344 (GTIN: EAN, UPC or JAN) 
-icecatClient.openCatalog.getProduct('en', '4948570114344').then(function (product) {
+// Language: en, GTIN: 4948570114344 (GTIN: EAN, UPC or GTIN-13/JAN) 
+icecatClient.openCatalog.getProduct('EN', '4948570114344').then(function (product) {
     console.log('Description: ' + product.getLongDescription());
     
     const productImages = product.getImages();
@@ -40,54 +40,102 @@ icecatClient.openCatalog.getProduct('en', '4948570114344').then(function (produc
     console.error('Error or timeout', reason);
 });
 ```
+Demo: https://runkit.com/greencore/icecat-demo
 
-# Product info
+# openCatalog
 
-getReturnCode
-- returnCode.FAIL
-- returnCode.SUCCESS
+## getProduct(Language, GTIN)
 
-getName
+Arguments:
+- Language: [Supported language codes.](Languages.md)
+- GTIN: EAN, UPC or GTIN-13/JAN
+
+Returns: productObject
+
+
+***getReturnCode***
+- returnCode.FAIL (-1)
+- returnCode.SUCCESS (1)
+
+***getName***
+<br/>
 returns Product Name {string}
+<br/>Example: X4071UHSU-B1
 
-getTitle
+***getTitle***
+<br/>
 returns Product Title {string}
+<br/>Example: iiyama X4071UHSU-B1 39.5" LED 4K Ultra HD Black public display
 
-getReleaseDate
+***getReleaseDate***
+<br/>
 returns Product Release Date YYYY-MM-DD {string}
+<br/>Example: 2015-10-04
 
-getLongDescription
+***getLongDescription***
+<br/>
 returns {string}
 
-getShortDescription
+***getShortDescription***
+<br/>
 returns {string}
 
-getProductInfoPDFurl
+***getProductInfoPDFurl***
+<br/>
+returns {string}
+<br/>Example: http://pdfs.icecat.biz/pdf/48068167-5427.pdf
+
+***getProductManualPDFurl***
+<br/>
 returns {string}
 
-getProductManualPDFurl
+
+***getProductUrl***
+<br/>
 returns {string}
 
-getProductUrl
+***getSupplier***
+<br/>
 returns {string}
+<br/>Example: iiyama
 
-getSupplier
+***getCategory***
+<br/>
 returns {string}
+<br/>Example: public displays
 
-getCategory
+***getEan***
+<br/>
 returns {string}
+<br/>Example: 4948570114344
 
-getEan
-returns {string}
+***getImages***
+<br/>
+returns {array}
+<br/>Example: 
+```json
+[ { IsMain: 'Y',
+    HighImg: 'http://images.icecat.biz/img/gallery/29900045_1198.jpg',
+    LowImg: 'http://images.icecat.biz/img/gallery_lows/29900045_1198.jpg',
+    TumbImg: 'http://images.icecat.biz/img/gallery_thumbs/29900045_1198.jpg' },
+  { IsMain: undefined,
+    HighImg: 'http://images.icecat.biz/img/gallery/29900045_3889.jpg',
+    LowImg: 'http://images.icecat.biz/img/gallery_lows/29900045_3889.jpg',
+    TumbImg: 'http://images.icecat.biz/img/gallery_thumbs/29900045_3889.jpg' },
+  { IsMain: undefined,
+    HighImg: 'http://images.icecat.biz/img/gallery/29900045_6765.jpg',
+    LowImg: 'http://images.icecat.biz/img/gallery_lows/29900045_6765.jpg',
+    TumbImg: 'http://images.icecat.biz/img/gallery_thumbs/29900045_6765.jpg' }]
+```
 
-getImages
+***getSpecifications***
+<br/>
 returns {array}
 
-getSpecifications
-returns {array}
-
-getMultimediaObjects
+***getMultimediaObjects***
+<br/>
 returns {Array}
+
 
 # About Icecat
 

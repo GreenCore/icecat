@@ -1,7 +1,7 @@
 {
   "name": "icecat",
-  "version": "0.0.5",
-  "description": "Node.JS library to communicate with the Icecat API",
+  "version": "0.0.6",
+  "description": "Icecat API - Find product description with EAN, UPC or GTIN-13.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -12,12 +12,14 @@
   },
   "keywords": [
     "icecat",
+    "openCatalog",
+    "ean",
+    "upc",
     "product",
     "information",
-    "api",
-    "ean",
     "image",
-    "description"
+    "description",
+    "api"
   ],
   "author": "GreenCore",
   "license": "MIT",
@@ -28,5 +30,6 @@
   "dependencies": {
     "https": "^1.0.0",
     "xml2js": "^0.4.17"
-  }
+  },
+   "engines" : { "node" : ">=4.6.1" }
 }

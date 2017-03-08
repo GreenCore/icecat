@@ -1,0 +1,1051 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE ICECAT-interface SYSTEM "http://data.icecat.biz/dtd/ICECAT-interface_response.dtd">
+<!-- source: Icecat.biz 2017 -->
+<ICECAT-interface xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://data.icecat.biz/xsd/ICECAT-interface_response.xsd">
+   <Product Code="1" HighPic="http://images.icecat.biz/img/gallery/29900045_1198.jpg" HighPicHeight="320" HighPicSize="55066" HighPicWidth="385" ID="29900045" LowPic="http://images.icecat.biz/img/gallery_lows/29900045_1198.jpg" LowPicHeight="166" LowPicSize="29520" LowPicWidth="200" Name="X4071UHSU-B1" Pic500x500="http://images.icecat.biz/img/gallery_mediums/img_29900045_medium_1480671587_2923_1962.jpg" Pic500x500Height="0" Pic500x500Size="113851" Pic500x500Width="0" Prod_id="X4071UHSU-B1" Quality="ICECAT" ReleaseDate="2015-10-04" ThumbPic="http://images.icecat.biz/img/gallery_thumbs/29900045_1198.jpg" ThumbPicSize="3437" Title="iiyama X4071UHSU-B1 39.5&quot; LED 4K Ultra HD Black public display">
+   <CategoryFeatureGroup ID="10074" No="50"><FeatureGroup ID="5"><Name ID="4867" langid="1" Value="Display"/></FeatureGroup></CategoryFeatureGroup><CategoryFeatureGroup ID="10080" No="23"><FeatureGroup ID="9"><Name ID="4977" langid="1" Value="Audio"/></FeatureGroup></CategoryFeatureGroup><CategoryFeatureGroup ID="10083" No="40"><FeatureGroup ID="12"><Name ID="4995" langid="1" Value="Ports &amp; interfaces"/></FeatureGroup></CategoryFeatureGroup><CategoryFeatureGroup ID="10073" No="-1"><FeatureGroup ID="14"><Name ID="5023" langid="1" Value="Weight &amp; dimensions"/></FeatureGroup></CategoryFeatureGroup><CategoryFeatureGroup ID="10081" No="5"><FeatureGroup ID="27"><Name ID="5049" langid="1" Value="Power"/></FeatureGroup></CategoryFeatureGroup><CategoryFeatureGroup ID="10084" No="-5"><FeatureGroup ID="28"><Name ID="5067" langid="1" Value="Operational conditions"/></FeatureGroup></CategoryFeatureGroup><CategoryFeatureGroup ID="10871" No="3"><FeatureGroup ID="0"><Name ID="5073" langid="1" Value="Technical details"/></FeatureGroup></CategoryFeatureGroup><CategoryFeatureGroup ID="10078" No="-10"><FeatureGroup ID="67"><Name ID="27423" langid="1" Value="Packaging data"/></FeatureGroup></CategoryFeatureGroup><CategoryFeatureGroup ID="10101" No="-100"><FeatureGroup ID="146"><Name ID="624346" langid="1" Value="Other features"/></FeatureGroup></CategoryFeatureGroup><CategoryFeatureGroup ID="10869" No="30"><FeatureGroup ID="148"><Name ID="630457" langid="1" Value="Design"/></FeatureGroup></CategoryFeatureGroup><CategoryFeatureGroup ID="10870" No="35"><FeatureGroup ID="184"><Name ID="1218765" langid="1" Value="Performance"/></FeatureGroup></CategoryFeatureGroup><CategoryFeatureGroup ID="16263" No="2"><FeatureGroup ID="199"><Name ID="2020585" langid="1" Value="Computer system"/></FeatureGroup></CategoryFeatureGroup>
+   <Category ID="2672"><Name ID="1133925" langid="1" Value="public displays"/></Category>
+     <EANCode EAN="4948570114344"/>
+   
+   <ReasonsToBuy/>
+   <ProductBundled/>
+       <ProductDescription ID="48068167" LongDesc="&lt;b&gt;Stylish 40” screen with 4K resolution and USB hub&lt;/b&gt;\n\nThe ProLite X4071UHSU-B1 is an impressive 4K (3840 x 2160) monitor, offering a gigantic viewable area with 4 times more information and work space than a Full HD screen. Due to the high DPI (dots per inch) the monitor displays an incredibly sharp and crisp image. The VA panel technology offers exceptional colour performance, high contrast (5000:1) and wide viewing angles. PIP and PBP features allow users to easily create their own work space by displaying and manipulating multiple applications. USB 3.0 HUB, integrated speakers, headphone socket and hook, ensure compatibility across various devices and media platforms for a real multimedia experience. The ProLite X4071UHSU-B1 suits a massive range of applications including desktop publishing, CAD/CAM drawing, gaming, photographic and web design.\n\n&lt;b&gt;4K&lt;/b&gt;\n\nUHD resolution (3840x2160), better known as 4K, offers a gigantic viewable area with 4 times more information and work space than a Full HD screen. Due to the high DPI (dots per inch), it displays an incredibly sharp and crisp image.\n\n&lt;b&gt;MVA&lt;/b&gt;\n\nMVA technology offers higher contrast, darker blacks and much better viewing angles than standard TN technology. The screen will look good no matter what angle you look at it.\n\n&lt;b&gt;PIP&lt;/b&gt;\n\nPIP (Picture in Picture) function allows you to watch images coming from two different sources at the same time.\n\n&lt;b&gt;FLICKER FREE + BLUE LIGHT&lt;/b&gt;\n\nThe ultimate solution for the comfort and health of your eyes. Flicker free monitors with blue light reducer function. Absolutely no flickering. And the amount of blue light emitted by the screen and responsible for your eyes feeling fatigued substantially reduced.\n\n&lt;b&gt;SPEAKERS AND HEADPHONES&lt;/b&gt;\n\nPlaying with friends? Use the integrated high quality speakers. Don’t want to disturb anybody? Plug your headset to the headphone socket and turn the volume up." ManualPDFSize="3332489" ManualPDFURL="http://pdfs.icecat.biz/pdf/48068167-5566-manual.pdf" PDFSize="285343" PDFURL="http://pdfs.icecat.biz/pdf/48068167-5427.pdf" ShortDesc="39.5 MVA, 3 ms, 350 cd/m², 3840 x 2160, 16:9, PiP, PbP, HTCP, VESA, OSD, 3 x USB 3.0, HDMI, VGA, Black" URL="http://www.iiyama.com/gl_en/products/prolite-x4071uhsu-b1/" WarrantyInfo="" langid="1"/>
+   
+   
+    <ProductFeature Localized="0" ID="186273196" Local_ID="0" Value="39.5" CategoryFeature_ID="87016" CategoryFeatureGroup_ID="10074" No="10100500" Presentation_Value="100.3 cm (39.5&quot;)" Translated="0" Mandatory="1" Searchable="1">
+      <LocalValue Value="100.3">
+      <Measure ID="34">
+        <Signs><Sign ID="18" langid="1"><![CDATA[cm]]></Sign></Signs>
+      </Measure>
+    </LocalValue>
+      <Feature ID="944">
+        <Measure ID="16" Sign="">
+          <Signs><Sign ID="11" langid="1"><![CDATA["]]></Sign></Signs>
+        </Measure>
+        <Name ID="3429" langid="1" Value="Display diagonal"/>
+      </Feature>
+    </ProductFeature>
+
+    <ProductFeature Localized="0" ID="186273528" Local_ID="0" Value="LED" CategoryFeature_ID="87015" CategoryFeatureGroup_ID="10074" No="10100490" Presentation_Value="LED" Translated="1" Mandatory="1" Searchable="1">
+      <LocalValue Value="LED">
+      <Measure ID="29">
+        <Signs/>
+      </Measure>
+    </LocalValue>
+      <Feature ID="9104">
+        <Measure ID="29" Sign="">
+          <Signs/>
+        </Measure>
+        <Name ID="761213" langid="1" Value="Display type"/>
+      </Feature>
+    </ProductFeature>
+
+    <ProductFeature Localized="0" ID="186273204" Local_ID="0" Value="3840 x 2160" CategoryFeature_ID="87018" CategoryFeatureGroup_ID="10074" No="10100460" Presentation_Value="3840 x 2160 pixels" Translated="0" Mandatory="1" Searchable="1">
+      <LocalValue Value="3840 x 2160">
+      <Measure ID="39">
+        <Signs><Sign ID="23" langid="1"><![CDATA[pixels]]></Sign></Signs>
+      </Measure>
+    </LocalValue>
+      <Feature ID="1585">
+        <Measure ID="39" Sign="">
+          <Signs><Sign ID="23" langid="1"><![CDATA[pixels]]></Sign></Signs>
+        </Measure>
+        <Name ID="4927" langid="1" Value="Display resolution"/>
+      </Feature>
+    </ProductFeature>
+
+    <ProductFeature Localized="0" ID="186273202" Local_ID="0" Value="350" CategoryFeature_ID="87020" CategoryFeatureGroup_ID="10074" No="10100440" Presentation_Value="350 cd/m²" Translated="0" Mandatory="1" Searchable="1">
+      <LocalValue Value="350">
+      <Measure ID="43">
+        <Signs><Sign ID="27" langid="1"><![CDATA[cd/m²]]></Sign></Signs>
+      </Measure>
+    </LocalValue>
+      <Feature ID="1389">
+        <Measure ID="43" Sign="">
+          <Signs><Sign ID="27" langid="1"><![CDATA[cd/m²]]></Sign></Signs>
+        </Measure>
+        <Name ID="4319" langid="1" Value="Display brightness"/>
+      </Feature>
+    </ProductFeature>
+
+    <ProductFeature Localized="0" ID="186273281" Local_ID="0" Value="4K Ultra HD" CategoryFeature_ID="87084" CategoryFeatureGroup_ID="10074" No="10100420" Presentation_Value="4K Ultra HD" Translated="0" Mandatory="1" Searchable="1">
+      <LocalValue Value="4K Ultra HD">
+      <Measure ID="29">
+        <Signs/>
+      </Measure>
+    </LocalValue>
+      <Feature ID="11424">
+        <Measure ID="29" Sign="">
+          <Signs/>
+        </Measure>
+        <Name ID="1045472" langid="1" Value="HD type"/>
+      </Feature>
+    </ProductFeature>
+
+    <ProductFeature Localized="0" ID="186273205" Local_ID="0" Value="3" CategoryFeature_ID="87085" CategoryFeatureGroup_ID="10074" No="100360" Presentation_Value="3 ms" Translated="0" Mandatory="1" Searchable="0">
+      <LocalValue Value="3">
+      <Measure ID="27">
+        <Signs><Sign ID="1" langid="1"><![CDATA[ms]]></Sign></Signs>
+      </Measure>
+    </LocalValue>
+      <Feature ID="1516">
+        <Measure ID="27" Sign="">
+          <Signs><Sign ID="1" langid="1"><![CDATA[ms]]></Sign></Signs>
+        </Measure>
+        <Name ID="4751" langid="1" Value="Response time"/>
+      </Feature>
+    </ProductFeature>
+
+    <ProductFeature Localized="0" ID="186273216" Local_ID="0" Value="5000:1" CategoryFeature_ID="87026" CategoryFeatureGroup_ID="10074" No="100300" Presentation_Value="5000:1" Translated="1" Mandatory="0" Searchable="0">
+      <LocalValue Value="5000:1">
+      <Measure ID="29">
+        <Signs/>
+      </Measure>
+    </LocalValue>
+      <Feature ID="34">
+        <Measure ID="29" Sign="">
+          <Signs/>
+        </Measure>
+        <Name ID="1383" langid="1" Value="Contrast ratio (typical)"/>
+      </Feature>
+    </ProductFeature>
+
+    <ProductFeature Localized="0" ID="186273220" Local_ID="0" Value="12000000:1" CategoryFeature_ID="87027" CategoryFeatureGroup_ID="10074" No="100299" Presentation_Value="12000000:1" Translated="1" Mandatory="0" Searchable="0">
+      <LocalValue Value="12000000:1">
+      <Measure ID="29">
+        <Signs/>
+      </Measure>
+    </LocalValue>
+      <Feature ID="6087">
+        <Measure ID="29" Sign="">
+          <Signs/>
+        </Measure>
+        <Name ID="138022" langid="1" Value="Contrast ratio (dynamic)"/>
+      </Feature>
+    </ProductFeature>
+
+    <ProductFeature Localized="0" ID="186273225" Local_ID="0" Value="178" CategoryFeature_ID="87028" CategoryFeatureGroup_ID="10074" No="100290" Presentation_Value="178°" Translated="0" Mandatory="0" Searchable="0">
+      <LocalValue Value="178">
+      <Measure ID="32">
+        <Signs><Sign ID="16" langid="1"><![CDATA[°]]></Sign></Signs>
+      </Measure>
+    </LocalValue>
+      <Feature ID="37">
+        <Measure ID="32" Sign="">
+          <Signs><Sign ID="16" langid="1"><![CDATA[°]]></Sign></Signs>
+        </Measure>
+        <Name ID="1393" langid="1" Value="Viewing angle, horizontal"/>
+      </Feature>
+    </ProductFeature>
+
+    <ProductFeature Localized="0" ID="186273226" Local_ID="0" Value="178" CategoryFeature_ID="87029" CategoryFeatureGroup_ID="10074" No="100289" Presentation_Value="178°" Translated="0" Mandatory="0" Searchable="0">
+      <LocalValue Value="178">
+      <Measure ID="32">
+        <Signs><Sign ID="16" langid="1"><![CDATA[°]]></Sign></Signs>
+      </Measure>
+    </LocalValue>
+      <Feature ID="38">
+        <Measure ID="32" Sign="">
+          <Signs><Sign ID="16" langid="1"><![CDATA[°]]></Sign></Signs>
+        </Measure>
+        <Name ID="1395" langid="1" Value="Viewing angle, vertical"/>
+      </Feature>
+    </ProductFeature>
+
+    <ProductFeature Localized="0" ID="186273236" Local_ID="0" Value="1.073 billion colours" CategoryFeature_ID="154124" CategoryFeatureGroup_ID="10074" No="100280" Presentation_Value="1.073 billion colours" Translated="1" Mandatory="1" Searchable="0">
+      <LocalValue Value="1.073 billion colours">
+      <Measure ID="29">
+        <Signs/>
+      </Measure>
+    </LocalValue>
+      <Feature ID="24847">
+        <Measure ID="29" Sign="">
+          <Signs/>
+        </Measure>
+        <Name ID="2065760" langid="1" Value="Display number of colours"/>
+      </Feature>
+    </ProductFeature>
+
+    <ProductFeature Localized="0" ID="186273246" Local_ID="0" Value="0.229 x 0.225" CategoryFeature_ID="87031" CategoryFeatureGroup_ID="10074" No="100270" Presentation_Value="0.229 x 0.225 mm" Translated="0" Mandatory="1" Searchable="0">
+      <LocalValue Value="0.229 x 0.225">
+      <Measure ID="24">
+        <Signs><Sign ID="3" langid="1"><![CDATA[mm]]></Sign></Signs>
+      </Measure>
+    </LocalValue>
+      <Feature ID="32">
+        <Measure ID="24" Sign="">
+          <Signs><Sign ID="3" langid="1"><![CDATA[mm]]></Sign></Signs>
+        </Measure>
+        <Name ID="1377" langid="1" Value="Pixel pitch"/>
+      </Feature>
+    </ProductFeature>
+
+    <ProductFeature Localized="0" ID="186273534" Local_ID="0" Value="485.35 x 878.11" CategoryFeature_ID="91968" CategoryFeatureGroup_ID="10074" No="100260" Presentation_Value="485.35 x 878.11 mm" Translated="0" Mandatory="0" Searchable="0">
+      <LocalValue Value="485.4 x 878.1">
+      <Measure ID="24">
+        <Signs><Sign ID="3" langid="1"><![CDATA[mm]]></Sign></Signs>
+      </Measure>
+    </LocalValue>
+      <Feature ID="15748">
+        <Measure ID="24" Sign="">
+          <Signs><Sign ID="3" langid="1"><![CDATA[mm]]></Sign></Signs>
+        </Measure>
+        <Name ID="1179128" langid="1" Value="Active display area (W x H)"/>
+      </Feature>
+    </ProductFeature>
+
+    <ProductFeature Localized="0" ID="186273214" Local_ID="0" Value="100.3" CategoryFeature_ID="87017" CategoryFeatureGroup_ID="10074" No="100200" Presentation_Value="100.3 cm" Translated="0" Mandatory="0" Searchable="0">
+      <LocalValue Value="100.3">
+      <Measure ID="34">
+        <Signs><Sign ID="18" langid="1"><![CDATA[cm]]></Sign></Signs>
+      </Measure>
+    </LocalValue>
+      <Feature ID="4174">
+        <Measure ID="34" Sign="">
+          <Signs><Sign ID="18" langid="1"><![CDATA[cm]]></Sign></Signs>
+        </Measure>
+        <Name ID="59092" langid="1" Value="Display diagonal (metric)"/>
+      </Feature>
+    </ProductFeature>
+
+    <ProductFeature Localized="0" ID="186273249" Local_ID="0" Value="30 - 135" CategoryFeature_ID="87080" CategoryFeatureGroup_ID="10074" No="100000" Presentation_Value="30 - 135 kHz" Translated="0" Mandatory="0" Searchable="0">
+      <LocalValue Value="30 - 135">
+      <Measure ID="31">
+        <Signs><Sign ID="15" langid="1"><![CDATA[kHz]]></Sign></Signs>
+      </Measure>
+    </LocalValue>
+      <Feature ID="35">
+        <Measure ID="31" Sign="">
+          <Signs><Sign ID="15" langid="1"><![CDATA[kHz]]></Sign></Signs>
+        </Measure>
+        <Name ID="1387" langid="1" Value="Horizontal scan range"/>
+      </Feature>
+    </ProductFeature>
+
+    <ProductFeature Localized="0" ID="186273251" Local_ID="0" Value="24 - 75" CategoryFeature_ID="87081" CategoryFeatureGroup_ID="10074" No="100000" Presentation_Value="24 - 75 Hz" Translated="0" Mandatory="0" Searchable="0">
+      <LocalValue Value="24 - 75">
+      <Measure ID="36">
+        <Signs><Sign ID="20" langid="1"><![CDATA[Hz]]></Sign></Signs>
+      </Measure>
+    </LocalValue>
+      <Feature ID="90">
+        <Measure ID="36" Sign="">
+          <Signs><Sign ID="20" langid="1"><![CDATA[Hz]]></Sign></Signs>
+        </Measure>
+        <Name ID="1517" langid="1" Value="Vertical scan range"/>
+      </Feature>
+    </ProductFeature>
+
+    <ProductFeature Localized="0" ID="186273287" Local_ID="0" Value="1920 x 1080 (HD 1080),2048 x 1152,2560 x 1440,3840 x 2160" CategoryFeature_ID="87119" CategoryFeatureGroup_ID="10074" No="100000" Presentation_Value="1920 x 1080 (HD 1080), 2048 x 1152, 2560 x 1440, 3840 x 2160" Translated="0" Mandatory="0" Searchable="0">
+      <LocalValue Value="1920 x 1080 (HD 1080), 2048 x 1152, 2560 x 1440, 3840 x 2160">
+      <Measure ID="29">
+        <Signs/>
+      </Measure>
+    </LocalValue>
+      <Feature ID="4850">
+        <Measure ID="29" Sign="">
+          <Signs/>
+        </Measure>
+        <Name ID="61312" langid="1" Value="Supported graphics resolutions"/>
+      </Feature>
+    </ProductFeature>
+
+    <ProductFeature Localized="0" ID="186273514" Local_ID="0" Value="16:9" CategoryFeature_ID="87127" CategoryFeatureGroup_ID="10074" No="100000" Presentation_Value="16:9" Translated="1" Mandatory="0" Searchable="0">
+      <LocalValue Value="16:9">
+      <Measure ID="29">
+        <Signs/>
+      </Measure>
+    </LocalValue>
+      <Feature ID="11417">
+        <Measure ID="29" Sign="">
+          <Signs/>
+        </Measure>
+        <Name ID="1045266" langid="1" Value="Native aspect ratio"/>
+      </Feature>
+    </ProductFeature>
+
+    <ProductFeature Localized="0" ID="186273513" Local_ID="0" Value="N" CategoryFeature_ID="92129" CategoryFeatureGroup_ID="10074" No="100000" Presentation_Value="N" Translated="1" Mandatory="1" Searchable="0">
+      <LocalValue Value="N">
+      <Measure ID="26">
+        <Signs/>
+      </Measure>
+    </LocalValue>
+      <Feature ID="4963">
+        <Measure ID="26" Sign="">
+          <Signs/>
+        </Measure>
+        <Name ID="61603" langid="1" Value="Touchscreen"/>
+      </Feature>
+    </ProductFeature>
+
+    <ProductFeature Localized="0" ID="186273538" Local_ID="0" Value="N" CategoryFeature_ID="87024" CategoryFeatureGroup_ID="10083" No="10100500" Presentation_Value="N" Translated="1" Mandatory="1" Searchable="1">
+      <LocalValue Value="N">
+      <Measure ID="26">
+        <Signs/>
+      </Measure>
+    </LocalValue>
+      <Feature ID="1347">
+        <Measure ID="26" Sign="">
+          <Signs/>
+        </Measure>
+        <Name ID="4235" langid="1" Value="Ethernet LAN"/>
+      </Feature>
+    </ProductFeature>
+
+    <ProductFeature Localized="0" ID="186273371" Local_ID="0" Value="3" CategoryFeature_ID="87083" CategoryFeatureGroup_ID="10083" No="10100120" Presentation_Value="3" Translated="1" Mandatory="1" Searchable="1">
+      <LocalValue Value="3">
+      <Measure ID="29">
+        <Signs/>
+      </Measure>
+    </LocalValue>
+      <Feature ID="3566">
+        <Measure ID="29" Sign="">
+          <Signs/>
+        </Measure>
+        <Name ID="39496" langid="1" Value="HDMI ports quantity"/>
+      </Feature>
+    </ProductFeature>
+
+    <ProductFeature Localized="0" ID="186273540" Local_ID="0" Value="N" CategoryFeature_ID="87066" CategoryFeatureGroup_ID="10083" No="100100" Presentation_Value="N" Translated="1" Mandatory="1" Searchable="0">
+      <LocalValue Value="N">
+      <Measure ID="26">
+        <Signs/>
+      </Measure>
+    </LocalValue>
+      <Feature ID="2319">
+        <Measure ID="26" Sign="">
+          <Signs/>
+        </Measure>
+        <Name ID="11997" langid="1" Value="DVI port"/>
+      </Feature>
+    </ProductFeature>
+
+    <ProductFeature Localized="0" ID="186273542" Local_ID="0" Value="1" CategoryFeature_ID="87065" CategoryFeatureGroup_ID="10083" No="100090" Presentation_Value="1" Translated="0" Mandatory="1" Searchable="0">
+      <LocalValue Value="1">
+      <Measure ID="29">
+        <Signs/>
+      </Measure>
+    </LocalValue>
+      <Feature ID="8866">
+        <Measure ID="29" Sign="">
+          <Signs/>
+        </Measure>
+        <Name ID="747059" langid="1" Value="VGA (D-Sub) input ports"/>
+      </Feature>
+    </ProductFeature>
+
+    <ProductFeature Localized="0" ID="186273546" Local_ID="0" Value="3" CategoryFeature_ID="94285" CategoryFeatureGroup_ID="10083" No="100082" Presentation_Value="3" Translated="0" Mandatory="0" Searchable="0">
+      <LocalValue Value="3">
+      <Measure ID="29">
+        <Signs/>
+      </Measure>
+    </LocalValue>
+      <Feature ID="7963">
+        <Measure ID="29" Sign="">
+          <Signs/>
+        </Measure>
+        <Name ID="616030" langid="1" Value="HDMI in"/>
+      </Feature>
+    </ProductFeature>
+
+    <ProductFeature Localized="0" ID="186273553" Local_ID="0" Value="Y" CategoryFeature_ID="87100" CategoryFeatureGroup_ID="10083" No="100015" Presentation_Value="Y" Translated="1" Mandatory="1" Searchable="0">
+      <LocalValue Value="Y">
+      <Measure ID="29">
+        <Signs/>
+      </Measure>
+    </LocalValue>
+      <Feature ID="1339">
+        <Measure ID="29" Sign="">
+          <Signs/>
+        </Measure>
+        <Name ID="4219" langid="1" Value="USB port"/>
+      </Feature>
+    </ProductFeature>
+
+    <ProductFeature Localized="0" ID="186273554" Local_ID="0" Value="3.0 (3.1 Gen 1)" CategoryFeature_ID="87129" CategoryFeatureGroup_ID="10083" No="100000" Presentation_Value="3.0 (3.1 Gen 1)" Translated="0" Mandatory="0" Searchable="0">
+      <LocalValue Value="3.0 (3.1 Gen 1)">
+      <Measure ID="29">
+        <Signs/>
+      </Measure>
+    </LocalValue>
+      <Feature ID="8541">
+        <Measure ID="29" Sign="">
+          <Signs/>
+        </Measure>
+        <Name ID="718602" langid="1" Value="USB version"/>
+      </Feature>
+    </ProductFeature>
+
+    <ProductFeature Localized="0" ID="186273555" Local_ID="0" Value="3" CategoryFeature_ID="87130" CategoryFeatureGroup_ID="10083" No="100000" Presentation_Value="3" Translated="0" Mandatory="0" Searchable="0">
+      <LocalValue Value="3">
+      <Measure ID="29">
+        <Signs/>
+      </Measure>
+    </LocalValue>
+      <Feature ID="13033">
+        <Measure ID="29" Sign="">
+          <Signs/>
+        </Measure>
+        <Name ID="1096012" langid="1" Value="USB ports quantity"/>
+      </Feature>
+    </ProductFeature>
+
+    <ProductFeature Localized="0" ID="186273558" Local_ID="0" Value="1" CategoryFeature_ID="87329" CategoryFeatureGroup_ID="10083" No="100000" Presentation_Value="1" Translated="1" Mandatory="0" Searchable="0">
+      <LocalValue Value="1">
+      <Measure ID="29">
+        <Signs/>
+      </Measure>
+    </LocalValue>
+      <Feature ID="6611">
+        <Measure ID="29" Sign="">
+          <Signs/>
+        </Measure>
+        <Name ID="240711" langid="1" Value="DisplayPorts quantity"/>
+      </Feature>
+    </ProductFeature>
+
+    <ProductFeature Localized="0" ID="186273443" Local_ID="0" Value="N" CategoryFeature_ID="87057" CategoryFeatureGroup_ID="10870" No="10100050" Presentation_Value="N" Translated="1" Mandatory="1" Searchable="1">
+      <LocalValue Value="N">
+      <Measure ID="26">
+        <Signs/>
+      </Measure>
+    </LocalValue>
+      <Feature ID="2252">
+        <Measure ID="26" Sign="">
+          <Signs/>
+        </Measure>
+        <Name ID="11553" langid="1" Value="TV tuner integrated"/>
+      </Feature>
+    </ProductFeature>
+
+    <ProductFeature Localized="0" ID="186273649" Local_ID="0" Value="Y" CategoryFeature_ID="87021" CategoryFeatureGroup_ID="10870" No="100020" Presentation_Value="Y" Translated="1" Mandatory="0" Searchable="0">
+      <LocalValue Value="Y">
+      <Measure ID="29">
+        <Signs/>
+      </Measure>
+    </LocalValue>
+      <Feature ID="3220">
+        <Measure ID="29" Sign="">
+          <Signs/>
+        </Measure>
+        <Name ID="30568" langid="1" Value="Picture-in-Picture"/>
+      </Feature>
+    </ProductFeature>
+
+    <ProductFeature Localized="0" ID="186273276" Local_ID="0" Value="Y" CategoryFeature_ID="87063" CategoryFeatureGroup_ID="10870" No="100000" Presentation_Value="Y" Translated="1" Mandatory="1" Searchable="0">
+      <LocalValue Value="Y">
+      <Measure ID="26">
+        <Signs/>
+      </Measure>
+    </LocalValue>
+      <Feature ID="5636">
+        <Measure ID="26" Sign="">
+          <Signs/>
+        </Measure>
+        <Name ID="101298" langid="1" Value="HDCP"/>
+      </Feature>
+    </ProductFeature>
+
+    <ProductFeature Localized="0" ID="186273426" Local_ID="0" Value="10" CategoryFeature_ID="87133" CategoryFeatureGroup_ID="10870" No="100000" Presentation_Value="10" Translated="0" Mandatory="0" Searchable="0">
+      <LocalValue Value="10">
+      <Measure ID="29">
+        <Signs/>
+      </Measure>
+    </LocalValue>
+      <Feature ID="7598">
+        <Measure ID="29" Sign="">
+          <Signs/>
+        </Measure>
+        <Name ID="582664" langid="1" Value="Number of OSD languages"/>
+      </Feature>
+    </ProductFeature>
+
+    <ProductFeature Localized="0" ID="186273436" Local_ID="0" Value="CHI (SIMPL),CHI (TR),CZE,DEU,DUT,ENG,FRE,ITA,JPN,POL,RUM" CategoryFeature_ID="87134" CategoryFeatureGroup_ID="10870" No="100000" Presentation_Value="CHI (SIMPL), CHI (TR), CZE, German, Dutch, English, French, Italian, JPN, POL, Romanian" Translated="1" Mandatory="0" Searchable="0">
+      <LocalValue Value="CHI (SIMPL), CHI (TR), CZE, German, Dutch, English, French, Italian, JPN, POL, Romanian">
+      <Measure ID="29">
+        <Signs/>
+      </Measure>
+    </LocalValue>
+      <Feature ID="4275">
+        <Measure ID="29" Sign="">
+          <Signs/>
+        </Measure>
+        <Name ID="59894" langid="1" Value="On Screen Display (OSD) languages"/>
+      </Feature>
+    </ProductFeature>
+
+    <ProductFeature Localized="0" ID="186273600" Local_ID="0" Value="Y" CategoryFeature_ID="87092" CategoryFeatureGroup_ID="10870" No="99905" Presentation_Value="Y" Translated="1" Mandatory="0" Searchable="0">
+      <LocalValue Value="Y">
+      <Measure ID="26">
+        <Signs/>
+      </Measure>
+    </LocalValue>
+      <Feature ID="775">
+        <Measure ID="26" Sign="">
+          <Signs/>
+        </Measure>
+        <Name ID="3081" langid="1" Value="Plug and Play"/>
+      </Feature>
+    </ProductFeature>
+
+    <ProductFeature Localized="0" ID="186273421" Local_ID="0" Value="Black" CategoryFeature_ID="87019" CategoryFeatureGroup_ID="10869" No="10100400" Presentation_Value="Black" Translated="1" Mandatory="1" Searchable="1">
+      <LocalValue Value="Black">
+      <Measure ID="29">
+        <Signs/>
+      </Measure>
+    </LocalValue>
+      <Feature ID="1766">
+        <Measure ID="29" Sign="">
+          <Signs/>
+        </Measure>
+        <Name ID="5487" langid="1" Value="Colour of product"/>
+      </Feature>
+    </ProductFeature>
+
+    <ProductFeature Localized="0" ID="186273465" Local_ID="0" Value="Y" CategoryFeature_ID="102550" CategoryFeatureGroup_ID="10869" No="100200" Presentation_Value="Y" Translated="1" Mandatory="1" Searchable="0">
+      <LocalValue Value="Y">
+      <Measure ID="26">
+        <Signs/>
+      </Measure>
+    </LocalValue>
+      <Feature ID="16767">
+        <Measure ID="26" Sign="">
+          <Signs/>
+        </Measure>
+        <Name ID="1213583" langid="1" Value="VESA mounting"/>
+      </Feature>
+    </ProductFeature>
+
+    <ProductFeature Localized="0" ID="186273488" Local_ID="0" Value="400 x 200" CategoryFeature_ID="87047" CategoryFeatureGroup_ID="10869" No="100199" Presentation_Value="400 x 200 mm" Translated="0" Mandatory="1" Searchable="0">
+      <LocalValue Value="400 x 200">
+      <Measure ID="24">
+        <Signs><Sign ID="3" langid="1"><![CDATA[mm]]></Sign></Signs>
+      </Measure>
+    </LocalValue>
+      <Feature ID="4037">
+        <Measure ID="24" Sign="">
+          <Signs><Sign ID="3" langid="1"><![CDATA[mm]]></Sign></Signs>
+        </Measure>
+        <Name ID="56168" langid="1" Value="VESA mounting interfaces"/>
+      </Feature>
+    </ProductFeature>
+
+    <ProductFeature Localized="0" ID="186273495" Local_ID="0" Value="Vertical" CategoryFeature_ID="87128" CategoryFeatureGroup_ID="10869" No="100000" Presentation_Value="Vertical" Translated="1" Mandatory="0" Searchable="0">
+      <LocalValue Value="Vertical">
+      <Measure ID="29">
+        <Signs/>
+      </Measure>
+    </LocalValue>
+      <Feature ID="3416">
+        <Measure ID="29" Sign="">
+          <Signs/>
+        </Measure>
+        <Name ID="32818" langid="1" Value="Placement supported"/>
+      </Feature>
+    </ProductFeature>
+
+    <ProductFeature Localized="0" ID="186273458" Local_ID="0" Value="CE, TÜV-Bauart, VCCI-B, CU, PSE" CategoryFeature_ID="87023" CategoryFeatureGroup_ID="10869" No="99900" Presentation_Value="CE, TÜV-Bauart, VCCI-B, CU, PSE" Translated="0" Mandatory="0" Searchable="0">
+      <LocalValue Value="CE, TÜV-Bauart, VCCI-B, CU, PSE">
+      <Measure ID="29">
+        <Signs/>
+      </Measure>
+    </LocalValue>
+      <Feature ID="249">
+        <Measure ID="29" Sign="">
+          <Signs/>
+        </Measure>
+        <Name ID="1865" langid="1" Value="Certification"/>
+      </Feature>
+    </ProductFeature>
+
+    <ProductFeature Localized="0" ID="186273440" Local_ID="0" Value="Y" CategoryFeature_ID="87049" CategoryFeatureGroup_ID="10080" No="100000" Presentation_Value="Y" Translated="1" Mandatory="1" Searchable="0">
+      <LocalValue Value="Y">
+      <Measure ID="26">
+        <Signs/>
+      </Measure>
+    </LocalValue>
+      <Feature ID="2433">
+        <Measure ID="26" Sign="">
+          <Signs/>
+        </Measure>
+        <Name ID="12525" langid="1" Value="Built-in speaker(s)"/>
+      </Feature>
+    </ProductFeature>
+
+    <ProductFeature Localized="0" ID="186273445" Local_ID="0" Value="12" CategoryFeature_ID="87051" CategoryFeatureGroup_ID="10080" No="100000" Presentation_Value="12 W" Translated="0" Mandatory="0" Searchable="0">
+      <LocalValue Value="12">
+      <Measure ID="44">
+        <Signs><Sign ID="28" langid="1"><![CDATA[W]]></Sign></Signs>
+      </Measure>
+    </LocalValue>
+      <Feature ID="1854">
+        <Measure ID="44" Sign="">
+          <Signs><Sign ID="28" langid="1"><![CDATA[W]]></Sign></Signs>
+        </Measure>
+        <Name ID="5709" langid="1" Value="RMS rated power"/>
+      </Feature>
+    </ProductFeature>
+
+    <ProductFeature Localized="0" ID="186273498" Local_ID="0" Value="60" CategoryFeature_ID="87053" CategoryFeatureGroup_ID="10081" No="100100" Presentation_Value="60 W" Translated="0" Mandatory="1" Searchable="0">
+      <LocalValue Value="60">
+      <Measure ID="44">
+        <Signs><Sign ID="28" langid="1"><![CDATA[W]]></Sign></Signs>
+      </Measure>
+    </LocalValue>
+      <Feature ID="445">
+        <Measure ID="44" Sign="">
+          <Signs><Sign ID="28" langid="1"><![CDATA[W]]></Sign></Signs>
+        </Measure>
+        <Name ID="2257" langid="1" Value="Power consumption (typical)"/>
+      </Feature>
+    </ProductFeature>
+
+    <ProductFeature Localized="0" ID="186273499" Local_ID="0" Value="0.5" CategoryFeature_ID="87054" CategoryFeatureGroup_ID="10081" No="100090" Presentation_Value="0.5 W" Translated="0" Mandatory="1" Searchable="0">
+      <LocalValue Value="0.5">
+      <Measure ID="44">
+        <Signs><Sign ID="28" langid="1"><![CDATA[W]]></Sign></Signs>
+      </Measure>
+    </LocalValue>
+      <Feature ID="2036">
+        <Measure ID="44" Sign="">
+          <Signs><Sign ID="28" langid="1"><![CDATA[W]]></Sign></Signs>
+        </Measure>
+        <Name ID="9104" langid="1" Value="Power consumption (standby)"/>
+      </Feature>
+    </ProductFeature>
+
+    <ProductFeature Localized="0" ID="186273503" Local_ID="0" Value="100 - 240" CategoryFeature_ID="87055" CategoryFeatureGroup_ID="10081" No="100020" Presentation_Value="100 - 240 V" Translated="0" Mandatory="0" Searchable="0">
+      <LocalValue Value="100 - 240">
+      <Measure ID="42">
+        <Signs><Sign ID="26" langid="1"><![CDATA[V]]></Sign></Signs>
+      </Measure>
+    </LocalValue>
+      <Feature ID="8491">
+        <Measure ID="42" Sign="">
+          <Signs><Sign ID="26" langid="1"><![CDATA[V]]></Sign></Signs>
+        </Measure>
+        <Name ID="711418" langid="1" Value="AC input voltage"/>
+      </Feature>
+    </ProductFeature>
+
+    <ProductFeature Localized="0" ID="186273506" Local_ID="0" Value="50/60" CategoryFeature_ID="87056" CategoryFeatureGroup_ID="10081" No="100019" Presentation_Value="50/60 Hz" Translated="0" Mandatory="0" Searchable="0">
+      <LocalValue Value="50/60">
+      <Measure ID="36">
+        <Signs><Sign ID="20" langid="1"><![CDATA[Hz]]></Sign></Signs>
+      </Measure>
+    </LocalValue>
+      <Feature ID="8484">
+        <Measure ID="36" Sign="">
+          <Signs><Sign ID="20" langid="1"><![CDATA[Hz]]></Sign></Signs>
+        </Measure>
+        <Name ID="711064" langid="1" Value="AC input frequency"/>
+      </Feature>
+    </ProductFeature>
+
+    <ProductFeature Localized="0" ID="186273482" Local_ID="0" Value="B" CategoryFeature_ID="87360" CategoryFeatureGroup_ID="10081" No="100000" Presentation_Value="B" Translated="0" Mandatory="1" Searchable="0">
+      <LocalValue Value="B">
+      <Measure ID="29">
+        <Signs/>
+      </Measure>
+    </LocalValue>
+      <Feature ID="2705">
+        <Measure ID="29" Sign="">
+          <Signs/>
+        </Measure>
+        <Name ID="13683" langid="1" Value="Energy efficiency class"/>
+      </Feature>
+    </ProductFeature>
+
+    <ProductFeature Localized="0" ID="186273328" Local_ID="0" Value="N" CategoryFeature_ID="87093" CategoryFeatureGroup_ID="10081" No="99903" Presentation_Value="N" Translated="1" Mandatory="1" Searchable="0">
+      <LocalValue Value="N">
+      <Measure ID="26">
+        <Signs/>
+      </Measure>
+    </LocalValue>
+      <Feature ID="838">
+        <Measure ID="26" Sign="">
+          <Signs/>
+        </Measure>
+        <Name ID="3207" langid="1" Value="Energy Star certified"/>
+      </Feature>
+    </ProductFeature>
+
+    <ProductFeature Localized="0" ID="186273461" Local_ID="0" Value="N" CategoryFeature_ID="150573" CategoryFeatureGroup_ID="16263" No="100100" Presentation_Value="N" Translated="1" Mandatory="1" Searchable="0">
+      <LocalValue Value="N">
+      <Measure ID="26">
+        <Signs/>
+      </Measure>
+    </LocalValue>
+      <Feature ID="24485">
+        <Measure ID="26" Sign="">
+          <Signs/>
+        </Measure>
+        <Name ID="2020483" langid="1" Value="Computer system"/>
+      </Feature>
+    </ProductFeature>
+
+    <ProductFeature Localized="0" ID="186273602" Local_ID="0" Value="906.5" CategoryFeature_ID="87011" CategoryFeatureGroup_ID="10073" No="100025" Presentation_Value="906.5 mm" Translated="0" Mandatory="1" Searchable="0">
+      <LocalValue Value="906.5">
+      <Measure ID="24">
+        <Signs><Sign ID="3" langid="1"><![CDATA[mm]]></Sign></Signs>
+      </Measure>
+    </LocalValue>
+      <Feature ID="1649">
+        <Measure ID="24" Sign="">
+          <Signs><Sign ID="3" langid="1"><![CDATA[mm]]></Sign></Signs>
+        </Measure>
+        <Name ID="5143" langid="1" Value="Width"/>
+      </Feature>
+    </ProductFeature>
+
+    <ProductFeature Localized="0" ID="186273607" Local_ID="0" Value="238.5" CategoryFeature_ID="87012" CategoryFeatureGroup_ID="10073" No="100024" Presentation_Value="238.5 mm" Translated="0" Mandatory="1" Searchable="0">
+      <LocalValue Value="238.5">
+      <Measure ID="24">
+        <Signs><Sign ID="3" langid="1"><![CDATA[mm]]></Sign></Signs>
+      </Measure>
+    </LocalValue>
+      <Feature ID="1650">
+        <Measure ID="24" Sign="">
+          <Signs><Sign ID="3" langid="1"><![CDATA[mm]]></Sign></Signs>
+        </Measure>
+        <Name ID="5145" langid="1" Value="Depth"/>
+      </Feature>
+    </ProductFeature>
+
+    <ProductFeature Localized="0" ID="186273608" Local_ID="0" Value="577" CategoryFeature_ID="87013" CategoryFeatureGroup_ID="10073" No="100023" Presentation_Value="577 mm" Translated="0" Mandatory="1" Searchable="0">
+      <LocalValue Value="577">
+      <Measure ID="24">
+        <Signs><Sign ID="3" langid="1"><![CDATA[mm]]></Sign></Signs>
+      </Measure>
+    </LocalValue>
+      <Feature ID="1464">
+        <Measure ID="24" Sign="">
+          <Signs><Sign ID="3" langid="1"><![CDATA[mm]]></Sign></Signs>
+        </Measure>
+        <Name ID="4625" langid="1" Value="Height"/>
+      </Feature>
+    </ProductFeature>
+
+    <ProductFeature Localized="0" ID="186273612" Local_ID="0" Value="12200" CategoryFeature_ID="87014" CategoryFeatureGroup_ID="10073" No="100020" Presentation_Value="12.2 kg" Translated="0" Mandatory="1" Searchable="0">
+      <LocalValue Value="12.2">
+      <Measure ID="17">
+        <Signs><Sign ID="15505" langid="1"><![CDATA[kg]]></Sign></Signs>
+      </Measure>
+    </LocalValue>
+      <Feature ID="94">
+        <Measure ID="38" Sign="">
+          <Signs><Sign ID="22" langid="1"><![CDATA[g]]></Sign></Signs>
+        </Measure>
+        <Name ID="1525" langid="1" Value="Weight"/>
+      </Feature>
+    </ProductFeature>
+
+    <ProductFeature Localized="0" ID="186275190" Local_ID="0" Value="Y" CategoryFeature_ID="87041" CategoryFeatureGroup_ID="10078" No="100010" Presentation_Value="Y" Translated="1" Mandatory="0" Searchable="0">
+      <LocalValue Value="Y">
+      <Measure ID="26">
+        <Signs/>
+      </Measure>
+    </LocalValue>
+      <Feature ID="1665">
+        <Measure ID="26" Sign="">
+          <Signs/>
+        </Measure>
+        <Name ID="5197" langid="1" Value="Handheld remote control"/>
+      </Feature>
+    </ProductFeature>
+
+    <ProductFeature Localized="0" ID="186275182" Local_ID="0" Value="AC,Audio (3.5mm),DisplayPort,HDMI,Mini DisplayPort,RS-232,USB" CategoryFeature_ID="87042" CategoryFeatureGroup_ID="10078" No="100000" Presentation_Value="AC, Audio (3.5mm), DisplayPort, HDMI, Mini DisplayPort, RS-232, USB" Translated="1" Mandatory="0" Searchable="0">
+      <LocalValue Value="AC, Audio (3.5mm), DisplayPort, HDMI, Mini DisplayPort, RS-232, USB">
+      <Measure ID="29">
+        <Signs/>
+      </Measure>
+    </LocalValue>
+      <Feature ID="1830">
+        <Measure ID="29" Sign="">
+          <Signs/>
+        </Measure>
+        <Name ID="5653" langid="1" Value="Cables included"/>
+      </Feature>
+    </ProductFeature>
+
+    <ProductFeature Localized="0" ID="186275189" Local_ID="0" Value="Y" CategoryFeature_ID="87045" CategoryFeatureGroup_ID="10078" No="100000" Presentation_Value="Y" Translated="1" Mandatory="0" Searchable="0">
+      <LocalValue Value="Y">
+      <Measure ID="26">
+        <Signs/>
+      </Measure>
+    </LocalValue>
+      <Feature ID="8165">
+        <Measure ID="26" Sign="">
+          <Signs/>
+        </Measure>
+        <Name ID="629595" langid="1" Value="Mounting kit"/>
+      </Feature>
+    </ProductFeature>
+
+    <ProductFeature Localized="0" ID="186275187" Local_ID="0" Value="Y" CategoryFeature_ID="87230" CategoryFeatureGroup_ID="10078" No="100000" Presentation_Value="Y" Translated="1" Mandatory="0" Searchable="0">
+      <LocalValue Value="Y">
+      <Measure ID="26">
+        <Signs/>
+      </Measure>
+    </LocalValue>
+      <Feature ID="3981">
+        <Measure ID="26" Sign="">
+          <Signs/>
+        </Measure>
+        <Name ID="56096" langid="1" Value="Quick start guide"/>
+      </Feature>
+    </ProductFeature>
+
+    <ProductFeature Localized="0" ID="186273279" Local_ID="0" Value="N" CategoryFeature_ID="87266" CategoryFeatureGroup_ID="10101" No="100000" Presentation_Value="N" Translated="1" Mandatory="0" Searchable="0">
+      <LocalValue Value="N">
+      <Measure ID="26">
+        <Signs/>
+      </Measure>
+    </LocalValue>
+      <Feature ID="7599">
+        <Measure ID="26" Sign="">
+          <Signs/>
+        </Measure>
+        <Name ID="589538" langid="1" Value="3D"/>
+      </Feature>
+    </ProductFeature>
+
+    <ProductFeature Localized="0" ID="186273392" Local_ID="0" Value="Y" CategoryFeature_ID="87267" CategoryFeatureGroup_ID="10101" No="100000" Presentation_Value="Y" Translated="1" Mandatory="0" Searchable="0">
+      <LocalValue Value="Y">
+      <Measure ID="29">
+        <Signs/>
+      </Measure>
+    </LocalValue>
+      <Feature ID="3563">
+        <Measure ID="29" Sign="">
+          <Signs/>
+        </Measure>
+        <Name ID="39475" langid="1" Value="AC (power) in"/>
+      </Feature>
+    </ProductFeature>
+
+    <ProductFeature Localized="0" ID="186273253" Local_ID="0" Value="16:9" CategoryFeature_ID="87271" CategoryFeatureGroup_ID="10101" No="100000" Presentation_Value="16:9" Translated="1" Mandatory="0" Searchable="0">
+      <LocalValue Value="16:9">
+      <Measure ID="29">
+        <Signs/>
+      </Measure>
+    </LocalValue>
+      <Feature ID="39">
+        <Measure ID="29" Sign="">
+          <Signs/>
+        </Measure>
+        <Name ID="1415" langid="1" Value="Aspect ratio"/>
+      </Feature>
+    </ProductFeature>
+
+    <ProductFeature Localized="0" ID="186273441" Local_ID="0" Value="N" CategoryFeature_ID="87307" CategoryFeatureGroup_ID="10101" No="100000" Presentation_Value="N" Translated="1" Mandatory="0" Searchable="0">
+      <LocalValue Value="N">
+      <Measure ID="26">
+        <Signs/>
+      </Measure>
+    </LocalValue>
+      <Feature ID="8074">
+        <Measure ID="26" Sign="">
+          <Signs/>
+        </Measure>
+        <Name ID="623118" langid="1" Value="Built-in camera"/>
+      </Feature>
+    </ProductFeature>
+
+    <ProductFeature Localized="0" ID="186273463" Local_ID="0" Value="Kensington" CategoryFeature_ID="87311" CategoryFeatureGroup_ID="10101" No="100000" Presentation_Value="Kensington" Translated="0" Mandatory="0" Searchable="0">
+      <LocalValue Value="Kensington">
+      <Measure ID="29">
+        <Signs/>
+      </Measure>
+    </LocalValue>
+      <Feature ID="1352">
+        <Measure ID="29" Sign="">
+          <Signs/>
+        </Measure>
+        <Name ID="4245" langid="1" Value="Cable lock slot"/>
+      </Feature>
+    </ProductFeature>
+
+    <ProductFeature Localized="0" ID="186273209" Local_ID="0" Value="LED" CategoryFeature_ID="87325" CategoryFeatureGroup_ID="10101" No="100000" Presentation_Value="LED" Translated="0" Mandatory="0" Searchable="0">
+      <LocalValue Value="LED">
+      <Measure ID="29">
+        <Signs/>
+      </Measure>
+    </LocalValue>
+      <Feature ID="83">
+        <Measure ID="29" Sign="">
+          <Signs/>
+        </Measure>
+        <Name ID="1503" langid="1" Value="Display"/>
+      </Feature>
+    </ProductFeature>
+
+    <ProductFeature Localized="0" ID="186273210" Local_ID="0" Value="MVA" CategoryFeature_ID="87328" CategoryFeatureGroup_ID="10101" No="100000" Presentation_Value="MVA" Translated="0" Mandatory="0" Searchable="0">
+      <LocalValue Value="MVA">
+      <Measure ID="29">
+        <Signs/>
+      </Measure>
+    </LocalValue>
+      <Feature ID="9713">
+        <Measure ID="29" Sign="">
+          <Signs/>
+        </Measure>
+        <Name ID="804833" langid="1" Value="Display technology"/>
+      </Feature>
+    </ProductFeature>
+
+    <ProductFeature Localized="0" ID="186273330" Local_ID="0" Value="Silver" CategoryFeature_ID="87361" CategoryFeatureGroup_ID="10101" No="100000" Presentation_Value="Silver" Translated="1" Mandatory="0" Searchable="0">
+      <LocalValue Value="Silver">
+      <Measure ID="29">
+        <Signs/>
+      </Measure>
+    </LocalValue>
+      <Feature ID="8400">
+        <Measure ID="29" Sign="">
+          <Signs/>
+        </Measure>
+        <Name ID="643303" langid="1" Value="EPEAT compliance"/>
+      </Feature>
+    </ProductFeature>
+
+    <ProductFeature Localized="0" ID="186273397" Local_ID="0" Value="3.5 mm" CategoryFeature_ID="87367" CategoryFeatureGroup_ID="10101" No="100000" Presentation_Value="3.5 mm" Translated="1" Mandatory="0" Searchable="0">
+      <LocalValue Value="3.5 mm">
+      <Measure ID="29">
+        <Signs/>
+      </Measure>
+    </LocalValue>
+      <Feature ID="4163">
+        <Measure ID="29" Sign="">
+          <Signs/>
+        </Measure>
+        <Name ID="59050" langid="1" Value="Headphone connectivity"/>
+      </Feature>
+    </ProductFeature>
+
+    <ProductFeature Localized="0" ID="186273393" Local_ID="0" Value="1" CategoryFeature_ID="87368" CategoryFeatureGroup_ID="10101" No="100000" Presentation_Value="1" Translated="1" Mandatory="0" Searchable="0">
+      <LocalValue Value="1">
+      <Measure ID="29">
+        <Signs/>
+      </Measure>
+    </LocalValue>
+      <Feature ID="2313">
+        <Measure ID="29" Sign="">
+          <Signs/>
+        </Measure>
+        <Name ID="11979" langid="1" Value="Headphone outputs"/>
+      </Feature>
+    </ProductFeature>
+
+    <ProductFeature Localized="0" ID="186273444" Local_ID="0" Value="2" CategoryFeature_ID="87391" CategoryFeatureGroup_ID="10101" No="100000" Presentation_Value="2" Translated="0" Mandatory="0" Searchable="0">
+      <LocalValue Value="2">
+      <Measure ID="29">
+        <Signs/>
+      </Measure>
+    </LocalValue>
+      <Feature ID="4841">
+        <Measure ID="29" Sign="">
+          <Signs/>
+        </Measure>
+        <Name ID="61303" langid="1" Value="Number of loudspeakers"/>
+      </Feature>
+    </ProductFeature>
+
+    <ProductFeature Localized="0" ID="186273404" Local_ID="0" Value="Y" CategoryFeature_ID="87392" CategoryFeatureGroup_ID="10101" No="100000" Presentation_Value="Y" Translated="1" Mandatory="0" Searchable="0">
+      <LocalValue Value="Y">
+      <Measure ID="26">
+        <Signs/>
+      </Measure>
+    </LocalValue>
+      <Feature ID="6306">
+        <Measure ID="26" Sign="">
+          <Signs/>
+        </Measure>
+        <Name ID="167832" langid="1" Value="On/off switch"/>
+      </Feature>
+    </ProductFeature>
+
+    <ProductFeature Localized="0" ID="186273271" Local_ID="0" Value="Y" CategoryFeature_ID="87423" CategoryFeatureGroup_ID="10101" No="100000" Presentation_Value="Y" Translated="1" Mandatory="0" Searchable="0">
+      <LocalValue Value="Y">
+      <Measure ID="29">
+        <Signs/>
+      </Measure>
+    </LocalValue>
+      <Feature ID="3745">
+        <Measure ID="29" Sign="">
+          <Signs/>
+        </Measure>
+        <Name ID="42036" langid="1" Value="Separate H/V sync"/>
+      </Feature>
+    </ProductFeature>
+
+    <ProductFeature Localized="0" ID="186273413" Local_ID="0" Value="3" CategoryFeature_ID="87438" CategoryFeatureGroup_ID="10101" No="100000" Presentation_Value="3" Translated="1" Mandatory="0" Searchable="0">
+      <LocalValue Value="3">
+      <Measure ID="29">
+        <Signs/>
+      </Measure>
+    </LocalValue>
+      <Feature ID="6768">
+        <Measure ID="29" Sign="">
+          <Signs/>
+        </Measure>
+        <Name ID="286330" langid="1" Value="USB 3.0 (3.1 Gen 1) ports quantity"/>
+      </Feature>
+    </ProductFeature>
+
+    <ProductFeature Localized="0" ID="186273263" Local_ID="0" Value="485.35" CategoryFeature_ID="87441" CategoryFeatureGroup_ID="10101" No="100000" Presentation_Value="48.5 cm" Translated="0" Mandatory="0" Searchable="0">
+      <LocalValue Value="48.5">
+      <Measure ID="34">
+        <Signs><Sign ID="18" langid="1"><![CDATA[cm]]></Sign></Signs>
+      </Measure>
+    </LocalValue>
+      <Feature ID="91">
+        <Measure ID="24" Sign="">
+          <Signs><Sign ID="3" langid="1"><![CDATA[mm]]></Sign></Signs>
+        </Measure>
+        <Name ID="1519" langid="1" Value="Viewable size, horizontal"/>
+      </Feature>
+    </ProductFeature>
+
+    <ProductFeature Localized="0" ID="186273266" Local_ID="0" Value="878.11" CategoryFeature_ID="87442" CategoryFeatureGroup_ID="10101" No="100000" Presentation_Value="87.8 cm" Translated="0" Mandatory="0" Searchable="0">
+      <LocalValue Value="87.8">
+      <Measure ID="34">
+        <Signs><Sign ID="18" langid="1"><![CDATA[cm]]></Sign></Signs>
+      </Measure>
+    </LocalValue>
+      <Feature ID="92">
+        <Measure ID="24" Sign="">
+          <Signs><Sign ID="3" langid="1"><![CDATA[mm]]></Sign></Signs>
+        </Measure>
+        <Name ID="1521" langid="1" Value="Viewable size, vertical"/>
+      </Feature>
+    </ProductFeature>
+
+   <ProductGallery>
+     <ProductPicture IsMain="Y" LowPic="http://images.icecat.biz/img/gallery_lows/29900045_1198.jpg" LowPicHeight="166" LowPicWidth="200" LowSize="29520" No="1" Original="http://images.icecat.biz/img/gallery_raw/29900045_1198.jpeg" OriginalSize="23561" Pic="http://images.icecat.biz/img/gallery/29900045_1198.jpg" Pic500x500="http://images.icecat.biz/img/gallery_mediums/img_29900045_medium_1480671587_2923_1962.jpg" Pic500x500Height="0" Pic500x500Size="113851" Pic500x500Width="0" PicHeight="320" PicWidth="385" ProductPicture_ID="13254851" Size="55066" ThumbPic="http://images.icecat.biz/img/gallery_thumbs/29900045_1198.jpg" ThumbSize="3437"/>
+     <ProductPicture LowPic="http://images.icecat.biz/img/gallery_lows/29900045_3889.jpg" LowPicHeight="166" LowPicWidth="200" LowSize="34029" No="2" Original="http://images.icecat.biz/img/gallery_raw/29900045_3889.jpeg" OriginalSize="25490" Pic="http://images.icecat.biz/img/gallery/29900045_3889.jpg" Pic500x500="http://images.icecat.biz/img/gallery_mediums/img_29900045_medium_1480671587_9638_1962.jpg" Pic500x500Height="0" Pic500x500Size="128127" Pic500x500Width="0" PicHeight="320" PicWidth="385" ProductPicture_ID="13254856" Size="60740" ThumbPic="http://images.icecat.biz/img/gallery_thumbs/29900045_3889.jpg" ThumbSize="3730"/>
+     <ProductPicture LowPic="http://images.icecat.biz/img/gallery_lows/29900045_6765.jpg" LowPicHeight="166" LowPicWidth="200" LowSize="30461" No="3" Original="http://images.icecat.biz/img/gallery_raw/29900045_6765.jpeg" OriginalSize="22927" Pic="http://images.icecat.biz/img/gallery/29900045_6765.jpg" Pic500x500="http://images.icecat.biz/img/gallery_mediums/img_29900045_medium_1480671588_3007_1962.jpg" Pic500x500Height="0" Pic500x500Size="115197" Pic500x500Width="0" PicHeight="320" PicWidth="385" ProductPicture_ID="13254857" Size="54075" ThumbPic="http://images.icecat.biz/img/gallery_thumbs/29900045_6765.jpg" ThumbSize="3364"/>
+     <ProductPicture LowPic="http://images.icecat.biz/img/gallery_lows/29900045_0569.jpg" LowPicHeight="166" LowPicWidth="200" LowSize="33267" No="4" Original="http://images.icecat.biz/img/gallery_raw/29900045_0569.jpeg" OriginalSize="25456" Pic="http://images.icecat.biz/img/gallery/29900045_0569.jpg" Pic500x500="http://images.icecat.biz/img/gallery_mediums/img_29900045_medium_1480671590_5858_1962.jpg" Pic500x500Height="0" Pic500x500Size="125711" Pic500x500Width="0" PicHeight="320" PicWidth="385" ProductPicture_ID="13254861" Size="59976" ThumbPic="http://images.icecat.biz/img/gallery_thumbs/29900045_0569.jpg" ThumbSize="3640"/>
+     <ProductPicture LowPic="http://images.icecat.biz/img/gallery_lows/29900045_5438.jpg" LowPicHeight="166" LowPicWidth="200" LowSize="27041" No="5" Original="http://images.icecat.biz/img/gallery_raw/29900045_5438.jpeg" OriginalSize="20283" Pic="http://images.icecat.biz/img/gallery/29900045_5438.jpg" Pic500x500="http://images.icecat.biz/img/gallery_mediums/img_29900045_medium_1480671590_3564_1962.jpg" Pic500x500Height="0" Pic500x500Size="98454" Pic500x500Width="0" PicHeight="320" PicWidth="385" ProductPicture_ID="13254860" Size="46578" ThumbPic="http://images.icecat.biz/img/gallery_thumbs/29900045_5438.jpg" ThumbSize="3395"/>
+     <ProductPicture LowPic="http://images.icecat.biz/img/gallery_lows/29900045_9148.jpg" LowPicHeight="166" LowPicWidth="200" LowSize="4282" No="6" Original="http://images.icecat.biz/img/gallery_raw/29900045_9148.jpeg" OriginalSize="6732" Pic="http://images.icecat.biz/img/gallery/29900045_9148.jpg" Pic500x500="http://images.icecat.biz/img/gallery_mediums/img_29900045_medium_1480671588_532_1962.jpg" Pic500x500Height="0" Pic500x500Size="16763" Pic500x500Width="0" PicHeight="320" PicWidth="385" ProductPicture_ID="13254858" Size="8751" ThumbPic="http://images.icecat.biz/img/gallery_thumbs/29900045_9148.jpg" ThumbSize="971"/>
+     <ProductPicture LowPic="http://images.icecat.biz/img/gallery_lows/29900045_7312.jpg" LowPicHeight="166" LowPicWidth="200" LowSize="14720" No="7" Original="http://images.icecat.biz/img/gallery_raw/29900045_7312.jpeg" OriginalSize="13813" Pic="http://images.icecat.biz/img/gallery/29900045_7312.jpg" Pic500x500="http://images.icecat.biz/img/gallery_mediums/img_29900045_medium_1480671588_7073_1962.jpg" Pic500x500Height="0" Pic500x500Size="56650" Pic500x500Width="0" PicHeight="320" PicWidth="385" ProductPicture_ID="13254859" Size="23506" ThumbPic="http://images.icecat.biz/img/gallery_thumbs/29900045_7312.jpg" ThumbSize="1707"/>
+     <ProductPicture LowPic="http://images.icecat.biz/img/gallery_lows/29900045_6984.jpg" LowPicHeight="166" LowPicWidth="200" LowSize="16052" No="8" Original="http://images.icecat.biz/img/gallery_raw/29900045_6984.jpeg" OriginalSize="15392" Pic="http://images.icecat.biz/img/gallery/29900045_6984.jpg" Pic500x500="http://images.icecat.biz/img/gallery_mediums/img_29900045_medium_1480671590_8354_1962.jpg" Pic500x500Height="0" Pic500x500Size="60689" Pic500x500Width="0" PicHeight="320" PicWidth="385" ProductPicture_ID="13254862" Size="26712" ThumbPic="http://images.icecat.biz/img/gallery_thumbs/29900045_6984.jpg" ThumbSize="1935"/>
+     <ProductPicture LowPic="http://images.icecat.biz/img/gallery_lows/29900045_6068.jpg" LowPicHeight="166" LowPicWidth="200" LowSize="15644" No="9" Original="http://images.icecat.biz/img/gallery_raw/29900045_6068.jpeg" OriginalSize="17795" Pic="http://images.icecat.biz/img/gallery/29900045_6068.jpg" Pic500x500="http://images.icecat.biz/img/gallery_mediums/img_29900045_medium_1480671591_2558_1962.jpg" Pic500x500Height="0" Pic500x500Size="70922" Pic500x500Width="0" PicHeight="320" PicWidth="385" ProductPicture_ID="13254864" Size="29734" ThumbPic="http://images.icecat.biz/img/gallery_thumbs/29900045_6068.jpg" ThumbSize="1649"/>
+     <ProductPicture LowPic="http://images.icecat.biz/img/gallery_lows/29900045_4628.jpg" LowPicHeight="166" LowPicWidth="200" LowSize="14935" No="10" Original="http://images.icecat.biz/img/gallery_raw/29900045_4628.jpeg" OriginalSize="14168" Pic="http://images.icecat.biz/img/gallery/29900045_4628.jpg" Pic500x500="http://images.icecat.biz/img/gallery_mediums/img_29900045_medium_1480671591_0786_1962.jpg" Pic500x500Height="0" Pic500x500Size="60519" Pic500x500Width="0" PicHeight="320" PicWidth="385" ProductPicture_ID="13254863" Size="24701" ThumbPic="http://images.icecat.biz/img/gallery_thumbs/29900045_4628.jpg" ThumbSize="1536"/>
+     <ProductPicture LowPic="http://images.icecat.biz/img/gallery_lows/29900045_9043.jpg" LowPicHeight="166" LowPicWidth="200" LowSize="12699" No="11" Original="http://images.icecat.biz/img/gallery_raw/29900045_9043.jpeg" OriginalSize="12924" Pic="http://images.icecat.biz/img/gallery/29900045_9043.jpg" Pic500x500="http://images.icecat.biz/img/gallery_mediums/img_29900045_medium_1480671591_4434_1962.jpg" Pic500x500Height="0" Pic500x500Size="53658" Pic500x500Width="0" PicHeight="320" PicWidth="385" ProductPicture_ID="13254865" Size="22039" ThumbPic="http://images.icecat.biz/img/gallery_thumbs/29900045_9043.jpg" ThumbSize="1596"/>
+     <ProductPicture LowPic="http://images.icecat.biz/img/gallery_lows/29900045_6129.jpg" LowPicHeight="166" LowPicWidth="200" LowSize="10872" No="12" Original="http://images.icecat.biz/img/gallery_raw/29900045_6129.jpeg" OriginalSize="14594" Pic="http://images.icecat.biz/img/gallery/29900045_6129.jpg" Pic500x500="http://images.icecat.biz/img/gallery_mediums/img_29900045_medium_1480671591_6085_1962.jpg" Pic500x500Height="0" Pic500x500Size="45418" Pic500x500Width="0" PicHeight="320" PicWidth="385" ProductPicture_ID="13254866" Size="21235" ThumbPic="http://images.icecat.biz/img/gallery_thumbs/29900045_6129.jpg" ThumbSize="1534"/>
+   </ProductGallery>
+       <ProductMultimediaObject>
+      <MultimediaObject ContentType="image/png" Date="2016-06-24 11:07:02" Description="EU Energy Label" Height="0" KeepAsURL="0" MultimediaObject_ID="2884872" PreviewHeight="0" PreviewSize="0" PreviewUrl="" PreviewWidth="0" Size="26873" Type="EU Energy Label" URL="http://objects.icecat.biz/objects/mmo_29900045_1466759173_0229_548.png" UUID="ad8db8d6-2fc2-49c4-9210-5bdc53cc6551" Width="0" langid="0"/>
+    </ProductMultimediaObject>
+
+   <ProductRelated/>
+   
+   
+<SummaryDescription>
+<ShortSummaryDescription langid="1">iiyama X4071UHSU-B1, LED, 3840 x 2160 pixels, 4K Ultra HD, 5000:1, 12000000:1, 1.073 billion colours</ShortSummaryDescription>
+<LongSummaryDescription langid="1">iiyama X4071UHSU-B1. Display type: LED, Display resolution: 3840 x 2160 pixels, HD type: 4K Ultra HD. USB version: 3.0 (3.1 Gen 1). On Screen Display (OSD) languages: CHI (SIMPL), CHI (TR), CZE, German, Dutch, English, French, Italian, JPN, POL, Romanian. Colour of product: Black, VESA mounting interfaces: 400 x 200 mm, Placement supported: Vertical. AC input voltage: 100 - 240 V, AC input frequency: 50/60 Hz, Energy efficiency class: B</LongSummaryDescription>
+</SummaryDescription>
+
+    <Supplier ID="80" Name="iiyama"/>
+   </Product>
+</ICECAT-interface>
