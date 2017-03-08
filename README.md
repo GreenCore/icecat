@@ -113,7 +113,7 @@ returns {string}
 <br/>
 returns {array}
 <br/>Example: 
-```json
+```js
 [ { IsMain: 'Y',
     HighImg: 'http://images.icecat.biz/img/gallery/29900045_1198.jpg',
     LowImg: 'http://images.icecat.biz/img/gallery_lows/29900045_1198.jpg',
