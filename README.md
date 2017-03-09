@@ -1,5 +1,5 @@
 # Icecat API
-[![Version][npm-image]][npm-url] ![License][license-image]
+[![Version][npm-image]][npm-url] ![License][license-image] [![Build Status][travis-image]][travis-url]
 
 
 With this package you can read the worldwide product information data from Icecat. This product information comes from editors like participating manufacturers. You can use this package for comparison websites, online shopping directories or enterprise resource planning systems. 
@@ -149,4 +149,6 @@ returns {Array}
 
 [npm-image]: https://img.shields.io/npm/v/icecat.svg
 [npm-url]: https://npmjs.org/package/icecat
+[travis-image]: https://travis-ci.org/GreenCore/icecat.svg?branch=master
+[travis-url]: https://travis-ci.org/GreenCore/icecat
 [license-image]: https://img.shields.io/npm/l/icecat.svg
