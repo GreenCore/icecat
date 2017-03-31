@@ -12,7 +12,7 @@ const openCatalog = require('./lib/OpenCatalog/service');
  * @class  Icecat
  */
 const icecat = function(login, password){
-    this.httpAuth = login + ':' + encodeURI(password);
+    this.httpAuth = login + ':' + encodeURIComponent(password);
     this.VERSION = 1;
     this.scheme = 'https://';
     this.httpUrl = 'data.icecat.biz/xml_s3/xml_server3.cgi';
