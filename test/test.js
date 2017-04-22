@@ -23,8 +23,10 @@ describe('IcecatProduct', function () {
         });
 
         it('should return IcecatProduct', function () {
-            testProduct = new icecatProduct(icecatProductJSON, icecatProductXML);
+            const requestUrl = 'https://user:password@data.icecat.biz/response';
+            testProduct = new icecatProduct(icecatProductJSON, icecatProductXML, requestUrl);
             assert.ok(testProduct instanceof icecatProduct);
+            assert.ok(testProduct.requestUrl === requestUrl);
         });
     });
 
