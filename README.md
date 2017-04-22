@@ -57,6 +57,11 @@ Returns: productObject
 - returnCode.FAIL (-1)
 - returnCode.SUCCESS (1)
 
+***getErrorMessage***
+<br/>
+returns ErrorMessage {string}
+<br/>Example: The requested XML data-sheet is not present in the Icecat database.
+
 ***getName***
 <br/>
 returns Product Name {string}
