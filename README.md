@@ -89,7 +89,6 @@ returns {string}
 <br/>
 returns {string}
 
-
 ***getProductUrl***
 <br/>
 returns {string}
@@ -135,7 +134,6 @@ returns {array}
 ***getMultimediaObjects***
 <br/>
 returns {Array}
-
 
 # About Icecat
 
