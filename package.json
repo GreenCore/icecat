@@ -1,5 +1,5 @@
 {
-  "name": "icecat",
+  "name": "node-icecat",
   "version": "1.0.0",
   "description": "Icecat API - Find product description with EAN, UPC or GTIN-13.",
   "main": "index.js",
