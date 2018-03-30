@@ -57,6 +57,11 @@ Returns: productObject
 - returnCode.FAIL (-1)
 - returnCode.SUCCESS (1)
 
+***getErrorMessage***
+<br/>
+returns ErrorMessage {string}
+<br/>Example: The requested XML data-sheet is not present in the Icecat database.
+
 ***getName***
 <br/>
 returns Product Name {string}
@@ -89,7 +94,6 @@ returns {string}
 <br/>
 returns {string}
 
-
 ***getProductUrl***
 <br/>
 returns {string}
@@ -103,6 +107,17 @@ returns {string}
 <br/>
 returns {string}
 <br/>Example: public displays
+
+***getFamily***
+<br/>
+returns {object}
+<br/>Example: {"id":"30340","name":"ProLite"}
+
+***getID***
+<br/>
+Icecat product ID<br/>
+returns {string}
+<br/>Example: 29900045
 
 ***getEan***
 <br/>
@@ -136,13 +151,12 @@ returns {array}
 <br/>
 returns {Array}
 
-
 # About Icecat
 
-| Icecat           | Url                                       |
-|------------------|-------------------------------------------|
-| services         | http://icecat.us/menu/services/index.html |
-| product info     | http://icecat.us/                         | 
+| Icecat           | Url                                         |
+|------------------|---------------------------------------------|
+| services         | https://icecat.biz/menu/services/index.html |
+| product info     | https://icecat.biz/                         | 
 
 # License
 [MIT License](https://github.com/GreenCore/icecat/blob/master/LICENSE)
