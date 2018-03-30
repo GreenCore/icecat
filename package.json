@@ -29,14 +29,14 @@
   "homepage": "https://github.com/GreenCore/icecat#readme",
   "dependencies": {
     "https": "^1.0.0",
-    "husky": "^0.14.3",
-    "prettier": "^1.11.1",
-    "pretty-quick": "^1.4.1",
-    "xml2js": "^0.4.17",
-    "xo": "^0.20.3"
+    "xml2js": "^0.4.17"
   },
   "devDependencies": {
-    "mocha": "^3.2.0"
+    "husky": "^0.14.3",
+    "mocha": "^3.2.0",
+    "prettier": "^1.11.1",
+    "pretty-quick": "^1.4.1",
+    "xo": "^0.20.3"
   },
   "engines": {
     "node": ">=4.6.1"
