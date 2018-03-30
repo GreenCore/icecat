@@ -108,6 +108,17 @@ returns {string}
 returns {string}
 <br/>Example: public displays
 
+***getFamily***
+<br/>
+returns {object}
+<br/>Example: {"id":"30340","name":"ProLite"}
+
+***getID***
+<br/>
+Icecat product ID<br/>
+returns {string}
+<br/>Example: 29900045
+
 ***getEan***
 <br/>
 returns {string}
@@ -142,10 +153,10 @@ returns {Array}
 
 # About Icecat
 
-| Icecat           | Url                                       |
-|------------------|-------------------------------------------|
-| services         | http://icecat.us/menu/services/index.html |
-| product info     | http://icecat.us/                         | 
+| Icecat           | Url                                         |
+|------------------|---------------------------------------------|
+| services         | https://icecat.biz/menu/services/index.html |
+| product info     | https://icecat.biz/                         | 
 
 # License
 [MIT License](https://github.com/GreenCore/icecat/blob/master/LICENSE)
