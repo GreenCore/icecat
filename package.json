@@ -1,6 +1,6 @@
 {
   "name": "icecat",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Icecat API - Find product description with EAN, UPC or GTIN-13.",
   "main": "index.js",
   "scripts": {
@@ -28,8 +28,7 @@
   },
   "homepage": "https://github.com/GreenCore/icecat#readme",
   "dependencies": {
-    "https": "^1.0.0",
-    "xml2js": "^0.4.17"
+    "xml2js": "^0.4.19"
   },
   "devDependencies": {
     "husky": "^0.14.3",
