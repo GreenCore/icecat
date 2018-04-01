@@ -1,5 +1,8 @@
 # Icecat API
-[![Version][npm-image]][npm-url] ![License][license-image] [![Build Status][travis-image]][travis-url]
+[![Version][npm-image]][npm-url] 
+![License][license-image] 
+[![Build Status][travis-image]][travis-url]
+[![Known Vulnerabilities][snyk-image]][snyk-url]
 
 
 With this package you can read the worldwide product information data from Icecat. This product information comes from editors like participating manufacturers. You can use this package for comparison websites, online shopping directories or enterprise resource planning systems. 
@@ -52,6 +55,15 @@ Arguments:
 
 Returns: productObject
 
+## getProductId(Language, ProductId)
+
+Arguments:
+- Language: [Supported language codes.](Languages.md)
+- ProductId: ProductId from Icecat
+
+Returns: productObject
+
+## productObject
 
 ***getReturnCode***
 - returnCode.FAIL (-1)
@@ -165,4 +177,6 @@ returns {Array}
 [npm-url]: https://npmjs.org/package/icecat
 [travis-image]: https://travis-ci.org/GreenCore/icecat.svg?branch=master
 [travis-url]: https://travis-ci.org/GreenCore/icecat
+[snyk-image]: https://snyk.io/test/github/GreenCore/icecat/badge.svg
+[snyk-url]: https://snyk.io/test/github/GreenCore/icecat
 [license-image]: https://img.shields.io/npm/l/icecat.svg
