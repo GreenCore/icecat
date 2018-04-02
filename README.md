@@ -55,7 +55,7 @@ Arguments:
 
 Returns: productObject
 
-## getProductId(Language, ProductId)
+## getProductById(Language, ProductId)
 
 Arguments:
 - Language: [Supported language codes.](Languages.md)
@@ -125,13 +125,15 @@ returns {string}
 returns {object}
 <br/>Example: {"id":"30340","name":"ProLite"}
 
-***getID***
+***getId***
 <br/>
-Icecat product ID<br/>
+Get the Icecat product ID<br/>
 returns {string}
 <br/>Example: 29900045
 
 ***getEan***
+<br/>
+Get the first EAN from the productXML
 <br/>
 returns {string}
 <br/>Example: 4948570114344
