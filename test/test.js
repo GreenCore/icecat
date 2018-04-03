@@ -1,28 +1,24 @@
 'use strict';
 
 const assert = require('assert');
-
-const https = require('https');
-const parseString = require('xml2js').parseString;
+const path = require('path');
+const {parseString} = require('xml2js');
 const fs = require('fs');
 
 const icecatProduct = require('../lib/OpenCatalog/product');
 
 
 describe('IcecatProduct - Found', function () {
-    let icecatProductXML = fs.readFileSync(__dirname + '/fixtures/4948570114344.xml', 'utf8');
-    let icecatProductJSON;
-    let testProduct;
+    let icecatProductXML = fs.readFileSync(path.join(__dirname, 'fixtures/4948570114344.xml'), 'utf8');
+    let icecatProductJSON = null;
+    let testProduct = null;
 
     describe('Create Product', function () {
-        it('should parse XML to JSON', function () {
+        it('should return IcecatProduct', function () {
             parseString(icecatProductXML, function (err, jsonData) {
                 icecatProductJSON = jsonData;
-                assert.ok(typeof icecatProductJSON === 'object');
             });
-        });
 
-        it('should return IcecatProduct', function () {
             const requestUrl = 'https://user:password@data.icecat.biz/response';
             testProduct = new icecatProduct(icecatProductJSON, icecatProductXML, requestUrl);
             assert.ok(testProduct instanceof icecatProduct);
@@ -65,25 +61,20 @@ describe('IcecatProduct - Found', function () {
                 '29900045'
             );
         });
-
     });
-
 });
 
 describe('IcecatProduct - Not Found', function () {
-    let icecatProductXML = fs.readFileSync(__dirname + '/fixtures/12345.xml', 'utf8');
-    let icecatProductJSON;
-    let testProduct;
+    let icecatProductXML = fs.readFileSync(path.join(__dirname, 'fixtures/12345.xml'), 'utf8');
+    let icecatProductJSON = null;
+    let testProduct = null;
 
     describe('Create Product', function () {
-        it('should parse XML to JSON', function () {
+        it('should return IcecatProduct', function () {
             parseString(icecatProductXML, function (err, jsonData) {
                 icecatProductJSON = jsonData;
-                assert.ok(typeof icecatProductJSON === 'object');
             });
-        });
 
-        it('should return IcecatProduct', function () {
             const requestUrl = 'https://user:password@data.icecat.biz/response';
             testProduct = new icecatProduct(icecatProductJSON, icecatProductXML, requestUrl);
             assert.ok(testProduct instanceof icecatProduct);
@@ -98,7 +89,5 @@ describe('IcecatProduct - Not Found', function () {
                 testProduct.returnCode.FAIL
             );
         });
-
     });
-
 });
