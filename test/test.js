@@ -57,7 +57,7 @@ describe('IcecatProduct - Found', function () {
 
         it('should get Icecat Product Id', function () {
             assert.equal(
-                testProduct.getId(),
+                testProduct.getID(),
                 '29900045'
             );
         });
