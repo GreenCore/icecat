@@ -110,7 +110,7 @@ test('_requestProduct can return error if unable to parse XML', (t) => {
   responseStream.end();
   const promise = service._requestProduct('');
   service.https.get.yield(responseStream);
-  promise.catch((err) => {
+  promise.catch(() => {
     t.is(service.parseString.calledOnce);
     sandbox.restore();
     t.end();
