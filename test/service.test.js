@@ -9,7 +9,6 @@ const test = require('tape');
 const IcecatService = require('../lib/OpenCatalog/service');
 const IcecatProduct = require('../lib/OpenCatalog/product');
 
-const icecatProductJSON = JSON.parse(fs.readFileSync(path.join(__dirname, 'fixtures/4948570114344.json'), 'utf8'));
 const icecatProductXML = fs.readFileSync(path.join(__dirname, 'fixtures/4948570114344.xml'), 'utf8');
 
 const instance = {
