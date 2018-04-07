@@ -6,23 +6,13 @@
   "scripts": {
     "test": "tape test/*.test.js",
     "test:coverage": "nyc npm test --reporter=html",
-    "pre-commit": "pretty-quick --staged"
+    "precommit": "pretty-quick --staged"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/GreenCore/icecat.git"
   },
-  "keywords": [
-    "icecat",
-    "openCatalog",
-    "ean",
-    "upc",
-    "product",
-    "information",
-    "image",
-    "description",
-    "api"
-  ],
+  "keywords": ["icecat", "openCatalog", "ean", "upc", "product", "information", "image", "description", "api"],
   "author": "GreenCore",
   "license": "MIT",
   "bugs": {
