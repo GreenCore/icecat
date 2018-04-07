@@ -1,10 +1,10 @@
 'use strict';
 
-const test = require('tape');
 const path = require('path');
 const fs = require('fs');
+const test = require('tape');
 
-const icecatProduct = require('../lib/OpenCatalog/product');
+const IcecatProduct = require('../lib/OpenCatalog/product');
 
 const icecatProductJSONFound = JSON.parse(fs.readFileSync(path.join(__dirname, 'fixtures/4948570114344.json'), 'utf8'));
 const icecatProductXMLFound = fs.readFileSync(path.join(__dirname, 'fixtures/4948570114344.xml'), 'utf8');
@@ -13,50 +13,185 @@ const icecatProductXMLNotFound = fs.readFileSync(path.join(__dirname, 'fixtures/
 const requestUrl = 'https://user:password@data.icecat.biz/response';
 
 test('Found - Create Product', (t) => {
-  const testProduct = new icecatProduct(icecatProductJSONFound, icecatProductXMLFound, requestUrl);
-  t.ok(testProduct instanceof icecatProduct);
+  const testProduct = new IcecatProduct(icecatProductJSONFound, icecatProductXMLFound, requestUrl);
+  t.ok(testProduct instanceof IcecatProduct);
   t.equal(testProduct.requestUrl, requestUrl);
   t.end();
 });
 
 test('Found - Return code Success', (t) => {
-  const testProduct = new icecatProduct(icecatProductJSONFound, icecatProductXMLFound, requestUrl);
+  const testProduct = new IcecatProduct(icecatProductJSONFound, icecatProductXMLFound, requestUrl);
   t.is(testProduct.getReturnCode(), testProduct.returnCode.SUCCESS);
   t.end();
 });
 
+test('Found - Get JSON data', (t) => {
+  const testProduct = new IcecatProduct(icecatProductJSONFound, icecatProductXMLFound, requestUrl);
+  t.is(testProduct.getJSON(), icecatProductJSONFound);
+  t.end();
+});
+
+test('Found - Get XML data', (t) => {
+  const testProduct = new IcecatProduct(icecatProductJSONFound, icecatProductXMLFound, requestUrl);
+  t.is(testProduct.getXML(), icecatProductXMLFound);
+  t.end();
+});
+
+test('Found - Product values - ID', (t) => {
+  const testProduct = new IcecatProduct(icecatProductJSONFound, icecatProductXMLFound, requestUrl);
+  t.is(testProduct.getID(), '29900045');
+  t.end();
+});
+
+test('Found - Product values - Title', (t) => {
+  const testProduct = new IcecatProduct(icecatProductJSONFound, icecatProductXMLFound, requestUrl);
+  t.is(testProduct.getTitle(), 'iiyama X4071UHSU-B1 39.5" LED 4K Ultra HD Black public display');
+  t.end();
+});
+
+test('Found - Product values - Release date', (t) => {
+  const testProduct = new IcecatProduct(icecatProductJSONFound, icecatProductXMLFound, requestUrl);
+  t.is(testProduct.getReleaseDate(), '2015-10-04');
+  t.end();
+});
+
+test('Found - Product values - Long description', (t) => {
+  const testProduct = new IcecatProduct(icecatProductJSONFound, icecatProductXMLFound, requestUrl);
+  t.is(
+    testProduct.getLongDescription(),
+    '<b>Stylish 40” screen with 4K resolution and USB hub</b>\\n\\nThe ProLite X4071UHSU-B1 is an impressive 4K (3840 x 2160) monitor, offering a gigantic viewable area with 4 times more information and work space than a Full HD screen. Due to the high DPI (dots per inch) the monitor displays an incredibly sharp and crisp image. The VA panel technology offers exceptional colour performance, high contrast (5000:1) and wide viewing angles. PIP and PBP features allow users to easily create their own work space by displaying and manipulating multiple applications. USB 3.0 HUB, integrated speakers, headphone socket and hook, ensure compatibility across various devices and media platforms for a real multimedia experience. The ProLite X4071UHSU-B1 suits a massive range of applications including desktop publishing, CAD/CAM drawing, gaming, photographic and web design.\\n\\n<b>4K</b>\\n\\nUHD resolution (3840x2160), better known as 4K, offers a gigantic viewable area with 4 times more information and work space than a Full HD screen. Due to the high DPI (dots per inch), it displays an incredibly sharp and crisp image.\\n\\n<b>MVA</b>\\n\\nMVA technology offers higher contrast, darker blacks and much better viewing angles than standard TN technology. The screen will look good no matter what angle you look at it.\\n\\n<b>PIP</b>\\n\\nPIP (Picture in Picture) function allows you to watch images coming from two different sources at the same time.\\n\\n<b>FLICKER FREE + BLUE LIGHT</b>\\n\\nThe ultimate solution for the comfort and health of your eyes. Flicker free monitors with blue light reducer function. Absolutely no flickering. And the amount of blue light emitted by the screen and responsible for your eyes feeling fatigued substantially reduced.\\n\\n<b>SPEAKERS AND HEADPHONES</b>\\n\\nPlaying with friends? Use the integrated high quality speakers. Don’t want to disturb anybody? Plug your headset to the headphone socket and turn the volume up.'
+  );
+  t.end();
+});
+
+test('getLongDescription returns false when throwing', (t) => {
+  const testProduct = new IcecatProduct(icecatProductJSONFound, icecatProductXMLFound, requestUrl);
+  delete testProduct.productData; // Will product null reference error
+  t.is(testProduct.getLongDescription(), false);
+  t.end();
+});
+
+test('Found - Product values - Short description', (t) => {
+  const testProduct = new IcecatProduct(icecatProductJSONFound, icecatProductXMLFound, requestUrl);
+  t.is(
+    testProduct.getShortDescription(),
+    '39.5 MVA, 3 ms, 350 cd/m², 3840 x 2160, 16:9, PiP, PbP, HTCP, VESA, OSD, 3 x USB 3.0, HDMI, VGA, Black'
+  );
+  t.end();
+});
+
+test('getShortDescription returns false when throwing', (t) => {
+  const testProduct = new IcecatProduct(icecatProductJSONFound, icecatProductXMLFound, requestUrl);
+  delete testProduct.productData; // Will product null reference error
+  t.is(testProduct.getShortDescription(), false);
+  t.end();
+});
+
+test('Found - Product values - Product info PDF url', (t) => {
+  const testProduct = new IcecatProduct(icecatProductJSONFound, icecatProductXMLFound, requestUrl);
+  t.is(testProduct.getProductInfoPDFurl(), 'http://pdfs.icecat.biz/pdf/48068167-5427.pdf');
+  t.end();
+});
+
+test('getProductInfoPDFurl returns false when throwing', (t) => {
+  const testProduct = new IcecatProduct(icecatProductJSONFound, icecatProductXMLFound, requestUrl);
+  delete testProduct.productData; // Will product null reference error
+  t.is(testProduct.getProductInfoPDFurl(), false);
+  t.end();
+});
+
+test('Found - Product values - Product manual PDF url', (t) => {
+  const testProduct = new IcecatProduct(icecatProductJSONFound, icecatProductXMLFound, requestUrl);
+  t.is(testProduct.getProductManualPDFurl(), 'http://pdfs.icecat.biz/pdf/48068167-5566-manual.pdf');
+  t.end();
+});
+
+test('getProductManualPDFurl returns false when throwing', (t) => {
+  const testProduct = new IcecatProduct(icecatProductJSONFound, icecatProductXMLFound, requestUrl);
+  delete testProduct.productData; // Will product null reference error
+  t.is(testProduct.getProductManualPDFurl(), false);
+  t.end();
+});
+
+test('Found - Product values - Supplier', (t) => {
+  const testProduct = new IcecatProduct(icecatProductJSONFound, icecatProductXMLFound, requestUrl);
+  t.is(testProduct.getSupplier(), 'iiyama');
+  t.end();
+});
+
+test('Found - Product values - Category', (t) => {
+  const testProduct = new IcecatProduct(icecatProductJSONFound, icecatProductXMLFound, requestUrl);
+  t.is(testProduct.getCategory(), 'public displays');
+  t.end();
+});
+
+test('Found - Product values - Family', (t) => {
+  const testProduct = new IcecatProduct(icecatProductJSONFound, icecatProductXMLFound, requestUrl);
+  testProduct.productData.ProductFamily = [
+    {
+      Name: [
+        {
+          $: {
+            ID: '1',
+            Value: 'Test'
+          }
+        }
+      ]
+    }
+  ];
+  t.deepEqual(testProduct.getFamily(), {
+    id: '1',
+    name: 'Test'
+  });
+  t.end();
+});
+
+test('getFamily returns false when throwing', (t) => {
+  const testProduct = new IcecatProduct(icecatProductJSONFound, icecatProductXMLFound, requestUrl);
+  delete testProduct.productData; // Will product null reference error
+  t.is(testProduct.getFamily(), false);
+  t.end();
+});
+
 test('Found - Product values - Name', (t) => {
-  const testProduct = new icecatProduct(icecatProductJSONFound, icecatProductXMLFound, requestUrl);
+  const testProduct = new IcecatProduct(icecatProductJSONFound, icecatProductXMLFound, requestUrl);
   t.is(testProduct.getName(), 'X4071UHSU-B1');
   t.end();
 });
 
 test('Found - Product values - Url', (t) => {
-  const testProduct = new icecatProduct(icecatProductJSONFound, icecatProductXMLFound, requestUrl);
+  const testProduct = new IcecatProduct(icecatProductJSONFound, icecatProductXMLFound, requestUrl);
   t.is(testProduct.getProductUrl(), 'http://www.iiyama.com/gl_en/products/prolite-x4071uhsu-b1/');
   t.end();
 });
 
 test('Found - Product values - EAN', (t) => {
-  const testProduct = new icecatProduct(icecatProductJSONFound, icecatProductXMLFound, requestUrl);
+  const testProduct = new IcecatProduct(icecatProductJSONFound, icecatProductXMLFound, requestUrl);
   t.is(testProduct.getEan(), '4948570114344');
   t.end();
 });
 
 test('Found - Product values - ID', (t) => {
-  const testProduct = new icecatProduct(icecatProductJSONFound, icecatProductXMLFound, requestUrl);
+  const testProduct = new IcecatProduct(icecatProductJSONFound, icecatProductXMLFound, requestUrl);
   t.is(testProduct.getProductUrl(), 'http://www.iiyama.com/gl_en/products/prolite-x4071uhsu-b1/');
   t.end();
 });
 
+test('getProductUrl returns false when throwing', (t) => {
+  const testProduct = new IcecatProduct(icecatProductJSONFound, icecatProductXMLFound, requestUrl);
+  delete testProduct.productData; // Will product null reference error
+  t.is(testProduct.getProductUrl(), false);
+  t.end();
+});
+
 test('Found - Product values - Error message', (t) => {
-  const testProduct = new icecatProduct(icecatProductJSONFound, icecatProductXMLFound, requestUrl);
+  const testProduct = new IcecatProduct(icecatProductJSONFound, icecatProductXMLFound, requestUrl);
   t.notOk(testProduct.getErrorMessage(), 'No errors when succeeding');
   t.end();
 });
 
 test('Found - Product values - Multimedia Objects', (t) => {
-  const testProduct = new icecatProduct(icecatProductJSONFound, icecatProductXMLFound, requestUrl);
+  const testProduct = new IcecatProduct(icecatProductJSONFound, icecatProductXMLFound, requestUrl);
   t.deepEqual(testProduct.getMultimediaObjects(), [
     {
       contentType: 'image/png',
@@ -70,8 +205,94 @@ test('Found - Product values - Multimedia Objects', (t) => {
   t.end();
 });
 
+test('getMultimedia objects returns false when throwing', (t) => {
+  const testProduct = new IcecatProduct(icecatProductJSONFound, icecatProductXMLFound, requestUrl);
+  delete testProduct.productData; // Will product null reference error
+  t.is(testProduct.getMultimediaObjects(), false);
+  t.end();
+});
+
+test('Found - Product values - Images', (t) => {
+  const testProduct = new IcecatProduct(icecatProductJSONFound, icecatProductXMLFound, requestUrl);
+  t.deepEqual(testProduct.getImages(), [
+    {
+      IsMain: 'Y',
+      HighImg: 'http://images.icecat.biz/img/gallery/29900045_1198.jpg',
+      LowImg: 'http://images.icecat.biz/img/gallery_lows/29900045_1198.jpg',
+      ThumbImg: 'http://images.icecat.biz/img/gallery_thumbs/29900045_1198.jpg'
+    },
+    {
+      IsMain: undefined,
+      HighImg: 'http://images.icecat.biz/img/gallery/29900045_3889.jpg',
+      LowImg: 'http://images.icecat.biz/img/gallery_lows/29900045_3889.jpg',
+      ThumbImg: 'http://images.icecat.biz/img/gallery_thumbs/29900045_3889.jpg'
+    },
+    {
+      IsMain: undefined,
+      HighImg: 'http://images.icecat.biz/img/gallery/29900045_6765.jpg',
+      LowImg: 'http://images.icecat.biz/img/gallery_lows/29900045_6765.jpg',
+      ThumbImg: 'http://images.icecat.biz/img/gallery_thumbs/29900045_6765.jpg'
+    },
+    {
+      IsMain: undefined,
+      HighImg: 'http://images.icecat.biz/img/gallery/29900045_0569.jpg',
+      LowImg: 'http://images.icecat.biz/img/gallery_lows/29900045_0569.jpg',
+      ThumbImg: 'http://images.icecat.biz/img/gallery_thumbs/29900045_0569.jpg'
+    },
+    {
+      IsMain: undefined,
+      HighImg: 'http://images.icecat.biz/img/gallery/29900045_5438.jpg',
+      LowImg: 'http://images.icecat.biz/img/gallery_lows/29900045_5438.jpg',
+      ThumbImg: 'http://images.icecat.biz/img/gallery_thumbs/29900045_5438.jpg'
+    },
+    {
+      IsMain: undefined,
+      HighImg: 'http://images.icecat.biz/img/gallery/29900045_9148.jpg',
+      LowImg: 'http://images.icecat.biz/img/gallery_lows/29900045_9148.jpg',
+      ThumbImg: 'http://images.icecat.biz/img/gallery_thumbs/29900045_9148.jpg'
+    },
+    {
+      IsMain: undefined,
+      HighImg: 'http://images.icecat.biz/img/gallery/29900045_7312.jpg',
+      LowImg: 'http://images.icecat.biz/img/gallery_lows/29900045_7312.jpg',
+      ThumbImg: 'http://images.icecat.biz/img/gallery_thumbs/29900045_7312.jpg'
+    },
+    {
+      IsMain: undefined,
+      HighImg: 'http://images.icecat.biz/img/gallery/29900045_6984.jpg',
+      LowImg: 'http://images.icecat.biz/img/gallery_lows/29900045_6984.jpg',
+      ThumbImg: 'http://images.icecat.biz/img/gallery_thumbs/29900045_6984.jpg'
+    },
+    {
+      IsMain: undefined,
+      HighImg: 'http://images.icecat.biz/img/gallery/29900045_6068.jpg',
+      LowImg: 'http://images.icecat.biz/img/gallery_lows/29900045_6068.jpg',
+      ThumbImg: 'http://images.icecat.biz/img/gallery_thumbs/29900045_6068.jpg'
+    },
+    {
+      IsMain: undefined,
+      HighImg: 'http://images.icecat.biz/img/gallery/29900045_4628.jpg',
+      LowImg: 'http://images.icecat.biz/img/gallery_lows/29900045_4628.jpg',
+      ThumbImg: 'http://images.icecat.biz/img/gallery_thumbs/29900045_4628.jpg'
+    },
+    {
+      IsMain: undefined,
+      HighImg: 'http://images.icecat.biz/img/gallery/29900045_9043.jpg',
+      LowImg: 'http://images.icecat.biz/img/gallery_lows/29900045_9043.jpg',
+      ThumbImg: 'http://images.icecat.biz/img/gallery_thumbs/29900045_9043.jpg'
+    },
+    {
+      IsMain: undefined,
+      HighImg: 'http://images.icecat.biz/img/gallery/29900045_6129.jpg',
+      LowImg: 'http://images.icecat.biz/img/gallery_lows/29900045_6129.jpg',
+      ThumbImg: 'http://images.icecat.biz/img/gallery_thumbs/29900045_6129.jpg'
+    }
+  ]);
+  t.end();
+});
+
 test('Found - Product values - Specifications', (t) => {
-  const testProduct = new icecatProduct(icecatProductJSONFound, icecatProductXMLFound, requestUrl);
+  const testProduct = new IcecatProduct(icecatProductJSONFound, icecatProductXMLFound, requestUrl);
   t.deepEqual(testProduct.getSpecifications(), [
     {
       name: 'Display diagonal',
@@ -312,14 +533,14 @@ test('Found - Product values - Specifications', (t) => {
 });
 
 test('Not found - Create Product', (t) => {
-  const testProduct = new icecatProduct(icecatProductJSONNotFound, icecatProductXMLNotFound, requestUrl);
-  t.ok(testProduct instanceof icecatProduct);
+  const testProduct = new IcecatProduct(icecatProductJSONNotFound, icecatProductXMLNotFound, requestUrl);
+  t.ok(testProduct instanceof IcecatProduct);
   t.equal(testProduct.requestUrl, requestUrl);
   t.end();
 });
 
 test('Not found - Return code Fail', (t) => {
-  const testProduct = new icecatProduct(icecatProductJSONNotFound, icecatProductXMLNotFound, requestUrl);
+  const testProduct = new IcecatProduct(icecatProductJSONNotFound, icecatProductXMLNotFound, requestUrl);
   t.is(testProduct.getReturnCode(), testProduct.returnCode.FAIL);
   t.end();
 });
