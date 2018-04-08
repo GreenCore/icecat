@@ -2,7 +2,7 @@
 
 const fs = require('fs');
 const path = require('path');
-const { PassThrough } = require('stream');
+const PassThrough = require('stream').PassThrough;
 const sinon = require('sinon');
 const test = require('tape');
 
@@ -53,7 +53,7 @@ test('getProductById calls correct url', (t) => {
   service.getProductById(lang, productId);
 
   const expectedUrl = service._getBaseUrl(lang) + `;product_id=${productId}`;
-  const [callArg] = service._requestProduct.getCall(0).args;
+  const callArg = service._requestProduct.getCall(0).args[0];
 
   t.is(callArg, expectedUrl);
   sandbox.restore();
@@ -67,7 +67,7 @@ test('Sets icecat to empty object if initialised with nothing', (t) => {
 });
 
 function isPromise(x) {
-  return x && Object.prototype.toString.call(x) === '[object Promise]';
+  return x && x instanceof Promise;
 }
 
 test('_requestProduct returns Promise', (t) => {
