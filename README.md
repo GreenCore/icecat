@@ -39,7 +39,7 @@ icecatClient.openCatalog
 
     console.log('Product images:');
     for (let i in productImages) {
-      console.log(productImages[i].TumbImg);
+      console.log(productImages[i].ThumbImg);
     }
   })
   .catch(function(reason) {
@@ -156,19 +156,19 @@ returns {array}
     IsMain: 'Y',
     HighImg: 'http://images.icecat.biz/img/gallery/29900045_1198.jpg',
     LowImg: 'http://images.icecat.biz/img/gallery_lows/29900045_1198.jpg',
-    TumbImg: 'http://images.icecat.biz/img/gallery_thumbs/29900045_1198.jpg'
+    ThumbImg: 'http://images.icecat.biz/img/gallery_thumbs/29900045_1198.jpg'
   },
   {
     IsMain: undefined,
     HighImg: 'http://images.icecat.biz/img/gallery/29900045_3889.jpg',
     LowImg: 'http://images.icecat.biz/img/gallery_lows/29900045_3889.jpg',
-    TumbImg: 'http://images.icecat.biz/img/gallery_thumbs/29900045_3889.jpg'
+    ThumbImg: 'http://images.icecat.biz/img/gallery_thumbs/29900045_3889.jpg'
   },
   {
     IsMain: undefined,
     HighImg: 'http://images.icecat.biz/img/gallery/29900045_6765.jpg',
     LowImg: 'http://images.icecat.biz/img/gallery_lows/29900045_6765.jpg',
-    TumbImg: 'http://images.icecat.biz/img/gallery_thumbs/29900045_6765.jpg'
+    ThumbImg: 'http://images.icecat.biz/img/gallery_thumbs/29900045_6765.jpg'
   }
 ];
 ```
