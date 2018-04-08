@@ -1,20 +1,21 @@
 # Icecat API
-[![Version][npm-image]][npm-url] 
-![License][license-image] 
+
+[![Version][npm-image]][npm-url]
+![License][license-image]
 [![Build Status][travis-image]][travis-url]
 [![Known Vulnerabilities][snyk-image]][snyk-url]
+[![Coverage Status](https://coveralls.io/repos/github/GreenCore/icecat/badge.svg)](https://coveralls.io/github/GreenCore/icecat)
 
-
-With this package you can read the worldwide product information data from Icecat. This product information comes from editors like participating manufacturers. You can use this package for comparison websites, online shopping directories or enterprise resource planning systems. 
-
-
+With this package you can read the worldwide product information data from Icecat. This product information comes from editors like participating manufacturers. You can use this package for comparison websites, online shopping directories or enterprise resource planning systems.
 
 # Getting started
 
 ## 1) Icecat account
+
 To create a Icecat account, go to the [Icecat registration](https://icecat.biz/registration/) page.
 
 ## 2) Installation
+
 Install the Icecat Node.js package by running the following command within your project's root directory:
 
 ```
@@ -28,21 +29,24 @@ const icecat = require('icecat');
 
 const icecatClient = new icecat('username', 'password');
 
-// Language: en, GTIN: 4948570114344 (GTIN: EAN, UPC or GTIN-13/JAN) 
-icecatClient.openCatalog.getProduct('EN', '4948570114344').then(function (product) {
+// Language: en, GTIN: 4948570114344 (GTIN: EAN, UPC or GTIN-13/JAN)
+icecatClient.openCatalog
+  .getProduct('EN', '4948570114344')
+  .then(function(product) {
     console.log('Description: ' + product.getLongDescription());
-    
+
     const productImages = product.getImages();
 
     console.log('Product images:');
     for (let i in productImages) {
-        console.log(productImages[i].TumbImg);
+      console.log(productImages[i].ThumbImg);
     }
-    
-}).catch(function (reason) {
+  })
+  .catch(function(reason) {
     console.error('Error or timeout', reason);
-});
+  });
 ```
+
 Demo: https://runkit.com/greencore/icecat-demo
 
 # openCatalog
@@ -50,129 +54,142 @@ Demo: https://runkit.com/greencore/icecat-demo
 ## getProduct(Language, GTIN)
 
 Arguments:
-- Language: [Supported language codes.](Languages.md)
-- GTIN: EAN, UPC or GTIN-13/JAN
+
+* Language: [Supported language codes.](Languages.md)
+* GTIN: EAN, UPC or GTIN-13/JAN
 
 Returns: productObject
 
 ## getProductById(Language, ProductId)
 
 Arguments:
-- Language: [Supported language codes.](Languages.md)
-- ProductId: ProductId from Icecat
+
+* Language: [Supported language codes.](Languages.md)
+* ProductId: ProductId from Icecat
 
 Returns: productObject
 
 ## productObject
 
-***getReturnCode***
-- returnCode.FAIL (-1)
-- returnCode.SUCCESS (1)
+**_getReturnCode_**
 
-***getErrorMessage***
+* returnCode.FAIL (-1)
+* returnCode.SUCCESS (1)
+
+**_getErrorMessage_**
 <br/>
 returns ErrorMessage {string}
 <br/>Example: The requested XML data-sheet is not present in the Icecat database.
 
-***getName***
+**_getName_**
 <br/>
 returns Product Name {string}
 <br/>Example: X4071UHSU-B1
 
-***getTitle***
+**_getTitle_**
 <br/>
 returns Product Title {string}
 <br/>Example: iiyama X4071UHSU-B1 39.5" LED 4K Ultra HD Black public display
 
-***getReleaseDate***
+**_getReleaseDate_**
 <br/>
 returns Product Release Date YYYY-MM-DD {string}
 <br/>Example: 2015-10-04
 
-***getLongDescription***
+**_getLongDescription_**
 <br/>
 returns {string}
 
-***getShortDescription***
+**_getShortDescription_**
 <br/>
 returns {string}
 
-***getProductInfoPDFurl***
+**_getProductInfoPDFurl_**
 <br/>
 returns {string}
 <br/>Example: http://pdfs.icecat.biz/pdf/48068167-5427.pdf
 
-***getProductManualPDFurl***
+**_getProductManualPDFurl_**
 <br/>
 returns {string}
 
-***getProductUrl***
+**_getProductUrl_**
 <br/>
 returns {string}
 
-***getSupplier***
+**_getSupplier_**
 <br/>
 returns {string}
 <br/>Example: iiyama
 
-***getCategory***
+**_getCategory_**
 <br/>
 returns {string}
 <br/>Example: public displays
 
-***getFamily***
+**_getFamily_**
 <br/>
 returns {object}
 <br/>Example: {"id":"30340","name":"ProLite"}
 
-***getId***
+**_getId_**
 <br/>
 Get the Icecat product ID<br/>
 returns {string}
 <br/>Example: 29900045
 
-***getEan***
+**_getEan_**
 <br/>
 Get the first EAN from the productXML
 <br/>
 returns {string}
 <br/>Example: 4948570114344
 
-***getImages***
+**_getImages_**
 <br/>
 returns {array}
-<br/>Example: 
+<br/>Example:
+
 ```js
-[ { IsMain: 'Y',
+[
+  {
+    IsMain: 'Y',
     HighImg: 'http://images.icecat.biz/img/gallery/29900045_1198.jpg',
     LowImg: 'http://images.icecat.biz/img/gallery_lows/29900045_1198.jpg',
-    TumbImg: 'http://images.icecat.biz/img/gallery_thumbs/29900045_1198.jpg' },
-  { IsMain: undefined,
+    ThumbImg: 'http://images.icecat.biz/img/gallery_thumbs/29900045_1198.jpg'
+  },
+  {
+    IsMain: undefined,
     HighImg: 'http://images.icecat.biz/img/gallery/29900045_3889.jpg',
     LowImg: 'http://images.icecat.biz/img/gallery_lows/29900045_3889.jpg',
-    TumbImg: 'http://images.icecat.biz/img/gallery_thumbs/29900045_3889.jpg' },
-  { IsMain: undefined,
+    ThumbImg: 'http://images.icecat.biz/img/gallery_thumbs/29900045_3889.jpg'
+  },
+  {
+    IsMain: undefined,
     HighImg: 'http://images.icecat.biz/img/gallery/29900045_6765.jpg',
     LowImg: 'http://images.icecat.biz/img/gallery_lows/29900045_6765.jpg',
-    TumbImg: 'http://images.icecat.biz/img/gallery_thumbs/29900045_6765.jpg' }]
+    ThumbImg: 'http://images.icecat.biz/img/gallery_thumbs/29900045_6765.jpg'
+  }
+];
 ```
 
-***getSpecifications***
+**_getSpecifications_**
 <br/>
 returns {array}
 
-***getMultimediaObjects***
+**_getMultimediaObjects_**
 <br/>
 returns {Array}
 
 # About Icecat
 
-| Icecat           | Url                                         |
-|------------------|---------------------------------------------|
-| services         | https://icecat.biz/menu/services/index.html |
-| product info     | https://icecat.biz/                         | 
+| Icecat       | Url                                         |
+| ------------ | ------------------------------------------- |
+| services     | https://icecat.biz/menu/services/index.html |
+| product info | https://icecat.biz/                         |
 
 # License
+
 [MIT License](https://github.com/GreenCore/icecat/blob/master/LICENSE)
 
 [npm-image]: https://img.shields.io/npm/v/icecat.svg

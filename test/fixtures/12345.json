@@ -1,0 +1,17 @@
+{
+  "ICECAT-interface": {
+    "$": {
+      "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+      "xsi:noNamespaceSchemaLocation": "http://data.icecat.biz/xsd/ICECAT-interface_response.xsd"
+    },
+    "Product": [
+      {
+        "$": {
+          "Code": "-1",
+          "ID": "??",
+          "ErrorMessage": "The requested XML data-sheet is not present in the Icecat database."
+        }
+      }
+    ]
+  }
+}
