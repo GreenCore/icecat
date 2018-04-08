@@ -32,10 +32,10 @@
     "xo": "^0.20.3"
   },
   "engines": {
-    "node": ">=4.4.6"
+    "node": ">=4.0.0"
   },
   "xo": {
     "prettier": "true",
-    "nodeVersion": "4.4.6"
+    "nodeVersion": "4.0.0"
   }
 }
