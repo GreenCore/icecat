@@ -60,6 +60,24 @@ test('getProductById calls correct url', (t) => {
   t.end();
 });
 
+test('getProductBySKU calls correct url', (t) => {
+  const sandbox = sinon.sandbox.create();
+  const service = new IcecatService(instance);
+  sandbox.stub(service, '_requestProduct');
+
+  const lang = 'EN';
+  const brand = 'hp';
+  const sku = 'RJ459AV';
+  service.getProductBySKU(lang, brand, sku);
+
+  const expectedUrl = service._getBaseUrl(lang) + ';prod_id=' + sku + ';vendor=' + brand;
+  const callArg = service._requestProduct.getCall(0).args[0];
+
+  t.is(callArg, expectedUrl);
+  sandbox.restore();
+  t.end();
+});
+
 test('Sets icecat to empty object if initialised with nothing', (t) => {
   const service = new IcecatService();
   t.deepEqual(service.icecat, {});
