@@ -69,6 +69,16 @@ Arguments:
 
 Returns: productObject
 
+## getProductBySKU(Language, Brand, SKU)
+
+Arguments:
+
+* Language: [Supported language codes.](Languages.md)
+* Brand: Product brand
+* SKU: Product SKU from manufacturer
+
+Returns: productObject
+
 ## productObject
 
 **_getReturnCode_**
