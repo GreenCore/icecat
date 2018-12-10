@@ -55,8 +55,8 @@ Demo: https://runkit.com/greencore/icecat-demo
 
 Arguments:
 
-* Language: [Supported language codes.](Languages.md)
-* GTIN: EAN, UPC or GTIN-13/JAN
+- Language: [Supported language codes.](Languages.md)
+- GTIN: EAN, UPC or GTIN-13/JAN
 
 Returns: productObject
 
@@ -64,8 +64,8 @@ Returns: productObject
 
 Arguments:
 
-* Language: [Supported language codes.](Languages.md)
-* ProductId: ProductId from Icecat
+- Language: [Supported language codes.](Languages.md)
+- ProductId: ProductId from Icecat
 
 Returns: productObject
 
@@ -73,9 +73,9 @@ Returns: productObject
 
 Arguments:
 
-* Language: [Supported language codes.](Languages.md)
-* Brand: Product brand
-* SKU: Product SKU from manufacturer
+- Language: [Supported language codes.](Languages.md)
+- Brand: Product brand
+- SKU: Product SKU from manufacturer
 
 Returns: productObject
 
@@ -83,8 +83,8 @@ Returns: productObject
 
 **_getReturnCode_**
 
-* returnCode.FAIL (-1)
-* returnCode.SUCCESS (1)
+- returnCode.FAIL (-1)
+- returnCode.SUCCESS (1)
 
 **_getErrorMessage_**
 <br/>
@@ -190,6 +190,28 @@ returns {array}
 **_getMultimediaObjects_**
 <br/>
 returns {Array}
+
+**_getCategoryFeatureGroups_**
+<br/>
+returns {Array}
+<br/>Example:
+
+```js
+[
+  { id: '10074', name: 'Display' },
+  { id: '10080', name: 'Audio' },
+  { id: '10083', name: 'Ports & interfaces' },
+  { id: '10073', name: 'Weight & dimensions' },
+  { id: '10081', name: 'Power' },
+  { id: '10084', name: 'Operational conditions' },
+  { id: '10871', name: 'Technical details' },
+  { id: '10078', name: 'Packaging data' },
+  { id: '10101', name: 'Other features' },
+  { id: '10869', name: 'Design' },
+  { id: '10870', name: 'Performance' },
+  { id: '16263', name: 'Computer system' }
+];
+```
 
 # About Icecat
 
