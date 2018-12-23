@@ -544,3 +544,22 @@ test('Not found - Return code Fail', (t) => {
   t.is(testProduct.getReturnCode(), testProduct.returnCode.FAIL);
   t.end();
 });
+
+test('Found - Product values - Category feature groups', (t) => {
+  const testProduct = new IcecatProduct(icecatProductJSONFound, icecatProductXMLFound, requestUrl);
+  t.deepEqual(testProduct.getCategoryFeatureGroups(), [
+    { id: '10074', name: 'Display' },
+    { id: '10080', name: 'Audio' },
+    { id: '10083', name: 'Ports & interfaces' },
+    { id: '10073', name: 'Weight & dimensions' },
+    { id: '10081', name: 'Power' },
+    { id: '10084', name: 'Operational conditions' },
+    { id: '10871', name: 'Technical details' },
+    { id: '10078', name: 'Packaging data' },
+    { id: '10101', name: 'Other features' },
+    { id: '10869', name: 'Design' },
+    { id: '10870', name: 'Performance' },
+    { id: '16263', name: 'Computer system' }
+  ]);
+  t.end();
+});
