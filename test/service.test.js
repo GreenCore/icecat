@@ -28,7 +28,7 @@ test('_getBaseUrl returns correct base URL', (t) => {
 });
 
 test('getProduct calls correct url', (t) => {
-  const sandbox = sinon.sandbox.create();
+  const sandbox = sinon.createSandbox();
   const service = new IcecatService(instance);
   sandbox.stub(service, '_requestProduct');
 
@@ -44,7 +44,7 @@ test('getProduct calls correct url', (t) => {
 });
 
 test('getProductById calls correct url', (t) => {
-  const sandbox = sinon.sandbox.create();
+  const sandbox = sinon.createSandbox();
   const service = new IcecatService(instance);
   sandbox.stub(service, '_requestProduct');
 
@@ -61,7 +61,7 @@ test('getProductById calls correct url', (t) => {
 });
 
 test('getProductBySKU calls correct url', (t) => {
-  const sandbox = sinon.sandbox.create();
+  const sandbox = sinon.createSandbox();
   const service = new IcecatService(instance);
   sandbox.stub(service, '_requestProduct');
 
@@ -89,7 +89,7 @@ function isPromise(x) {
 }
 
 test('_requestProduct returns Promise', (t) => {
-  const sandbox = sinon.sandbox.create();
+  const sandbox = sinon.createSandbox();
   const service = new IcecatService(instance);
   sandbox.stub(service.https, 'get').returns({
     on: () => {}
@@ -101,7 +101,7 @@ test('_requestProduct returns Promise', (t) => {
 });
 
 test('_requestProduct can return IcecatProduct', (t) => {
-  const sandbox = sinon.sandbox.create();
+  const sandbox = sinon.createSandbox();
   const service = new IcecatService(instance);
   const requestStream = new PassThrough();
   sandbox.stub(service.https, 'get').returns(requestStream);
@@ -118,7 +118,7 @@ test('_requestProduct can return IcecatProduct', (t) => {
 });
 
 test('_requestProduct can return error if unable to parse XML', (t) => {
-  const sandbox = sinon.sandbox.create();
+  const sandbox = sinon.createSandbox();
   const service = new IcecatService(instance);
   const requestStream = new PassThrough();
   sandbox.stub(service.https, 'get').returns(requestStream);
@@ -136,7 +136,7 @@ test('_requestProduct can return error if unable to parse XML', (t) => {
 });
 
 test('_requestProduct resolves error if http call fails', (t) => {
-  const sandbox = sinon.sandbox.create();
+  const sandbox = sinon.createSandbox();
   const service = new IcecatService(instance);
   const requestStream = new PassThrough();
   sandbox.stub(service.https, 'get').returns(requestStream);

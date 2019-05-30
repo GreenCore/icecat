@@ -4,9 +4,10 @@
 ![License][license-image]
 [![Build Status][travis-image]][travis-url]
 [![Known Vulnerabilities][snyk-image]][snyk-url]
-[![Coverage Status](https://coveralls.io/repos/github/GreenCore/icecat/badge.svg)](https://coveralls.io/github/GreenCore/icecat)
 
-With this package you can read the worldwide product information data from Icecat. This product information comes from editors like participating manufacturers. You can use this package for comparison websites, online shopping directories or enterprise resource planning systems.
+With this package you can read the worldwide product information data from Icecat.
+This product information comes from editors like participating manufacturers. You can use this package for webshops,
+comparison websites, online shopping directories or enterprise resource planning systems.
 
 # Getting started
 

@@ -1,18 +1,31 @@
 {
   "name": "icecat",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "description": "Icecat API - Find product description with EAN, UPC or GTIN-13.",
   "main": "index.js",
   "scripts": {
     "test": "tape test/*.test.js",
     "test:coverage": "nyc npm test",
-    "precommit": "pretty-quick --staged"
+    "precommit": "pretty-quick --staged",
+    "pretty-quick": "pretty-quick"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/GreenCore/icecat.git"
   },
-  "keywords": ["icecat", "openCatalog", "ean", "upc", "product", "information", "image", "description", "api"],
+  "keywords": [
+    "icecat",
+    "api",
+    "openCatalog",
+    "ean",
+    "upc",
+    "product",
+    "information",
+    "image",
+    "description",
+    "ecommerce",
+    "webshop"
+  ],
   "author": "GreenCore",
   "license": "MIT",
   "bugs": {
@@ -23,13 +36,13 @@
     "xml2js": "^0.4.19"
   },
   "devDependencies": {
-    "nyc": "^11.6.0",
-    "sinon": "^4.5.0",
-    "tape": "^4.9.0",
-    "husky": "^0.14.3",
-    "prettier": "^1.11.1",
-    "pretty-quick": "^1.4.1",
-    "xo": "^0.20.3"
+    "husky": "^2.3.0",
+    "nyc": "^14.1.1",
+    "prettier": "^1.17.1",
+    "pretty-quick": "^1.11.0",
+    "sinon": "^7.3.2",
+    "tape": "^4.10.2",
+    "xo": "^0.24.0"
   },
   "engines": {
     "node": ">=4.0.0"
