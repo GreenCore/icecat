@@ -80,6 +80,14 @@ Arguments:
 
 Returns: productObject
 
+## getProductByXMLdata (xmldata)
+
+Arguments:
+
+- xmlData: XML data from an Icecat XML file or XML web service
+
+Returns: productObject
+
 ## productObject
 
 **_getReturnCode_**
