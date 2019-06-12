@@ -1,6 +1,6 @@
 {
   "name": "icecat",
-  "version": "1.4.1",
+  "version": "1.4.2",
   "description": "Icecat API - Find product description with EAN, UPC or GTIN-13.",
   "main": "index.js",
   "scripts": {
@@ -15,6 +15,8 @@
   },
   "keywords": [
     "icecat",
+    "ecommerce",
+    "webshop",
     "api",
     "openCatalog",
     "ean",
@@ -22,9 +24,7 @@
     "product",
     "information",
     "image",
-    "description",
-    "ecommerce",
-    "webshop"
+    "description"
   ],
   "author": "GreenCore",
   "license": "MIT",
@@ -36,9 +36,9 @@
     "xml2js": "^0.4.19"
   },
   "devDependencies": {
-    "husky": "^2.3.0",
+    "husky": "^2.4.0",
     "nyc": "^14.1.1",
-    "prettier": "^1.17.1",
+    "prettier": "^1.18.2",
     "pretty-quick": "^1.11.0",
     "sinon": "^7.3.2",
     "tape": "^4.10.2",

@@ -20,9 +20,7 @@ const instance = {
 
 test('_getBaseUrl returns correct base URL', (t) => {
   const service = new IcecatService(instance);
-  const expectedUrl = `${instance.scheme}${instance.httpAuth}@${instance.httpUrl}?lang=${
-    instance.lang
-  };output=productxml`;
+  const expectedUrl = `${instance.scheme}${instance.httpAuth}@${instance.httpUrl}?lang=${instance.lang};output=productxml`;
   t.is(service._getBaseUrl(instance.lang), expectedUrl);
   t.end();
 });
@@ -76,6 +74,16 @@ test('getProductBySKU calls correct url', (t) => {
   t.is(callArg, expectedUrl);
   sandbox.restore();
   t.end();
+});
+
+test('getProductByXMLdata can return IcecatProduct', (t) => {
+  const service = new IcecatService();
+  const promise = service.getProductByXMLdata(icecatProductXML);
+
+  promise.then((icecatProduct) => {
+    t.ok(icecatProduct instanceof IcecatProduct);
+    t.end();
+  });
 });
 
 test('Sets icecat to empty object if initialised with nothing', (t) => {
