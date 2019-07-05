@@ -4,7 +4,7 @@
   "description": "Icecat API - Find product description with EAN, UPC or GTIN-13.",
   "main": "index.js",
   "scripts": {
-    "test": "tape test/*.test.js",
+    "test": "ava",
     "test:coverage": "nyc npm test",
     "precommit": "pretty-quick --staged",
     "pretty-quick": "pretty-quick"
@@ -36,12 +36,12 @@
     "xml2js": "^0.4.19"
   },
   "devDependencies": {
+    "ava": "^2.1.0",
     "husky": "^2.4.0",
     "nyc": "^14.1.1",
     "prettier": "^1.18.2",
     "pretty-quick": "^1.11.0",
     "sinon": "^7.3.2",
-    "tape": "^4.10.2",
     "xo": "^0.24.0"
   },
   "engines": {
