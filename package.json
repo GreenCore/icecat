@@ -45,10 +45,10 @@
     "xo": "^0.24.0"
   },
   "engines": {
-    "node": ">=4.0.0"
+    "node": ">=8.9.4"
   },
   "xo": {
     "prettier": "true",
-    "nodeVersion": "4.0.0"
+    "nodeVersion": ">=8.9.4"
   }
 }
