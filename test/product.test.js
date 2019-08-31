@@ -263,6 +263,19 @@ test('Found - Product values - Images', (t) => {
   ]);
 });
 
+test('Found - Product values - Images missing 1', (t) => {
+  const testProduct = new IcecatProduct(icecatProductJSONFound, icecatProductXMLFound, requestUrl);
+  testProduct.productData.ProductGallery[0].ProductPicture = [];
+
+  t.deepEqual(testProduct.getImages(), undefined);
+});
+
+test('Found - Product values - Images missing 2', (t) => {
+  const testProduct = new IcecatProduct(icecatProductJSONFound, icecatProductXMLFound, requestUrl);
+  testProduct.productData.ProductGallery = [];
+
+  t.deepEqual(testProduct.getImages(), undefined);
+});
 test('Found - Product values - Specifications', (t) => {
   const testProduct = new IcecatProduct(icecatProductJSONFound, icecatProductXMLFound, requestUrl);
   t.deepEqual(testProduct.getSpecifications(), [
