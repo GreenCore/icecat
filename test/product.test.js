@@ -276,6 +276,14 @@ test('Found - Product values - Images missing 2', (t) => {
 
   t.deepEqual(testProduct.getImages(), undefined);
 });
+
+test('Found - Product values - ProductGallery missing', (t) => {
+  const testProduct = new IcecatProduct(icecatProductJSONFound, icecatProductXMLFound, requestUrl);
+  delete testProduct.productData.ProductGallery;
+
+  t.deepEqual(testProduct.getImages(), undefined);
+});
+
 test('Found - Product values - Specifications', (t) => {
   const testProduct = new IcecatProduct(icecatProductJSONFound, icecatProductXMLFound, requestUrl);
   t.deepEqual(testProduct.getSpecifications(), [
