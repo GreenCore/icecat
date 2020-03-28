@@ -2,7 +2,7 @@
 
 [![Version][npm-image]][npm-url]
 ![License][license-image]
-[![Build Status][travis-image]][travis-url]
+[![Build Status][gh-workflow-image]][gh-workflow-url]
 [![Known Vulnerabilities][snyk-image]][snyk-url]
 
 With this package you can read the worldwide product information data from Icecat.
@@ -240,3 +240,5 @@ returns {Array}
 [snyk-image]: https://snyk.io/test/github/GreenCore/icecat/badge.svg
 [snyk-url]: https://snyk.io/test/github/GreenCore/icecat
 [license-image]: https://img.shields.io/npm/l/icecat.svg
+[gh-workflow-image]: https://github.com/GreenCore/icecat/workflows/Node.js%20CI/badge.svg
+[gh-workflow-url]: https://github.com/GreenCore/icecat/actions?query=workflow%3A%22Node.js+CI%22
