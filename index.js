@@ -11,12 +11,13 @@ const openCatalog = require('./lib/OpenCatalog/service');
  * @prototype
  * @class  Icecat
  */
-const icecat = function (username, password, httpUrl = 'data.icecat.biz/xml_s3/xml_server3.cgi') {
+const icecat = function (username, password, httpUri = 'data.icecat.biz', path = '/xml_s3/xml_server3.cgi') {
     this.VERSION = packagejson.version;
-    this.scheme = 'https://';
+    this.port = 443;
     this.username = username;
     this.password = password;
-    this.httpUrl = httpUrl;
+    this.httpUri = httpUri;
+    this.path = path;
     this.openCatalog = new openCatalog(this);
 };
 
