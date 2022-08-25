@@ -2,114 +2,97 @@
 
 const path = require('path');
 const fs = require('fs');
-const test = require('ava');
-
 const IcecatProduct = require('../lib/OpenCatalog/product');
 
-const icecatProductJSONFound = JSON.parse(fs.readFileSync(path.join(__dirname, 'fixtures/4948570114344.json'), 'utf8'));
-const icecatProductXMLFound = fs.readFileSync(path.join(__dirname, 'fixtures/4948570114344.xml'), 'utf8');
+const icecatProductJSONFound = JSON.parse(fs.readFileSync(path.join(__dirname, 'fixtures/0190781289012.json'), 'utf8'));
+const icecatProductXMLFound = fs.readFileSync(path.join(__dirname, 'fixtures/0190781289012.xml'), 'utf8');
 const icecatProductJSONNotFound = JSON.parse(fs.readFileSync(path.join(__dirname, 'fixtures/12345.json'), 'utf8'));
 const icecatProductXMLNotFound = fs.readFileSync(path.join(__dirname, 'fixtures/12345.xml'), 'utf8');
 const requestUrl = 'https://user:password@data.icecat.biz/response';
 
-test('Found - Create Product', (t) => {
-  const testProduct = new IcecatProduct(icecatProductJSONFound, icecatProductXMLFound, requestUrl);
-  t.truthy(testProduct instanceof IcecatProduct);
-  t.is(testProduct.requestUrl, requestUrl);
+let testProduct;
+beforeEach(() => {
+  testProduct = new IcecatProduct(icecatProductJSONFound, icecatProductXMLFound, requestUrl);
 });
 
-test('Found - Return code Success', (t) => {
-  const testProduct = new IcecatProduct(icecatProductJSONFound, icecatProductXMLFound, requestUrl);
-  t.is(testProduct.getReturnCode(), testProduct.returnCode.SUCCESS);
+test('Found - Create Product', () => {
+  expect(testProduct instanceof IcecatProduct).toBeTruthy();
+  expect(testProduct.requestUrl).toBe(requestUrl);
 });
 
-test('Found - Get JSON data', (t) => {
-  const testProduct = new IcecatProduct(icecatProductJSONFound, icecatProductXMLFound, requestUrl);
-  t.is(testProduct.getJSON(), icecatProductJSONFound);
+test('Found - Return code Success', () => {
+  expect(testProduct.getReturnCode()).toBe(testProduct.returnCode.SUCCESS);
 });
 
-test('Found - Get XML data', (t) => {
-  const testProduct = new IcecatProduct(icecatProductJSONFound, icecatProductXMLFound, requestUrl);
-  t.is(testProduct.getXML(), icecatProductXMLFound);
+test('Found - Get JSON data', () => {
+  expect(testProduct.getJSON()).toBe(icecatProductJSONFound);
 });
 
-test('Found - Product values - ID', (t) => {
-  const testProduct = new IcecatProduct(icecatProductJSONFound, icecatProductXMLFound, requestUrl);
-  t.is(testProduct.getID(), '29900045');
+test('Found - Get XML data', () => {
+  expect(testProduct.getXML()).toBe(icecatProductXMLFound);
 });
 
-test('Found - Product values - Title', (t) => {
-  const testProduct = new IcecatProduct(icecatProductJSONFound, icecatProductXMLFound, requestUrl);
-  t.is(testProduct.getTitle(), 'iiyama X4071UHSU-B1 39.5" LED 4K Ultra HD Black public display');
+test('Found - Product values - ID', () => {
+  expect(testProduct.getID()).toBe('39302897');
 });
 
-test('Found - Product values - Release date', (t) => {
-  const testProduct = new IcecatProduct(icecatProductJSONFound, icecatProductXMLFound, requestUrl);
-  t.is(testProduct.getReleaseDate(), '2015-10-04');
-});
-
-test('Found - Product values - Long description', (t) => {
-  const testProduct = new IcecatProduct(icecatProductJSONFound, icecatProductXMLFound, requestUrl);
-  t.is(
-    testProduct.getLongDescription(),
-    '<b>Stylish 40” screen with 4K resolution and USB hub</b>\\n\\nThe ProLite X4071UHSU-B1 is an impressive 4K (3840 x 2160) monitor, offering a gigantic viewable area with 4 times more information and work space than a Full HD screen. Due to the high DPI (dots per inch) the monitor displays an incredibly sharp and crisp image. The VA panel technology offers exceptional colour performance, high contrast (5000:1) and wide viewing angles. PIP and PBP features allow users to easily create their own work space by displaying and manipulating multiple applications. USB 3.0 HUB, integrated speakers, headphone socket and hook, ensure compatibility across various devices and media platforms for a real multimedia experience. The ProLite X4071UHSU-B1 suits a massive range of applications including desktop publishing, CAD/CAM drawing, gaming, photographic and web design.\\n\\n<b>4K</b>\\n\\nUHD resolution (3840x2160), better known as 4K, offers a gigantic viewable area with 4 times more information and work space than a Full HD screen. Due to the high DPI (dots per inch), it displays an incredibly sharp and crisp image.\\n\\n<b>MVA</b>\\n\\nMVA technology offers higher contrast, darker blacks and much better viewing angles than standard TN technology. The screen will look good no matter what angle you look at it.\\n\\n<b>PIP</b>\\n\\nPIP (Picture in Picture) function allows you to watch images coming from two different sources at the same time.\\n\\n<b>FLICKER FREE + BLUE LIGHT</b>\\n\\nThe ultimate solution for the comfort and health of your eyes. Flicker free monitors with blue light reducer function. Absolutely no flickering. And the amount of blue light emitted by the screen and responsible for your eyes feeling fatigued substantially reduced.\\n\\n<b>SPEAKERS AND HEADPHONES</b>\\n\\nPlaying with friends? Use the integrated high quality speakers. Don’t want to disturb anybody? Plug your headset to the headphone socket and turn the volume up.'
+test('Found - Product values - Title', () => {
+  expect(testProduct.getTitle()).toBe(
+    'HP EliteDisplay E273m 68.6 cm (27") 1920 x 1080 pixels Full HD LED Black, Silver'
   );
 });
 
-test('getLongDescription returns false when throwing', (t) => {
-  const testProduct = new IcecatProduct(icecatProductJSONFound, icecatProductXMLFound, requestUrl);
-  delete testProduct.productData; // Will product null reference error
-  t.is(testProduct.getLongDescription(), false);
+test('Found - Product values - Release date', () => {
+  expect(testProduct.getReleaseDate()).toBe('2017-11-01');
 });
 
-test('Found - Product values - Short description', (t) => {
-  const testProduct = new IcecatProduct(icecatProductJSONFound, icecatProductXMLFound, requestUrl);
-  t.is(
-    testProduct.getShortDescription(),
-    '39.5 MVA, 3 ms, 350 cd/m², 3840 x 2160, 16:9, PiP, PbP, HTCP, VESA, OSD, 3 x USB 3.0, HDMI, VGA, Black'
+test('Found - Product values - Long description', () => {
+  expect(testProduct.getLongDescription()).toBe(
+    '<b>A strikingly modern business collaboration companion</b>\nConnect and collaborate in complete comfort on the HP EliteDisplay E273m 68.58 cm (27") Monitor, which is Skype for Business® certified for optimal video and audio experiences between displays and has a 3-sided micro-edge bezel for seamless multi-display<sup>[1]</sup> tiling and 4-way adjustable ergonomics.'
   );
 });
 
-test('getShortDescription returns false when throwing', (t) => {
-  const testProduct = new IcecatProduct(icecatProductJSONFound, icecatProductXMLFound, requestUrl);
+test('getLongDescription returns false when throwing', () => {
   delete testProduct.productData; // Will product null reference error
-  t.is(testProduct.getShortDescription(), false);
+  expect(testProduct.getLongDescription()).toBe(false);
 });
 
-test('Found - Product values - Product info PDF url', (t) => {
-  const testProduct = new IcecatProduct(icecatProductJSONFound, icecatProductXMLFound, requestUrl);
-  t.is(testProduct.getProductInfoPDFurl(), 'http://pdfs.icecat.biz/pdf/48068167-5427.pdf');
+test('Found - Product values - Short description', () => {
+  expect(testProduct.getShortDescription()).toBe('27", Full HD 1920 x 1080, 16:9, 250cd/m²');
 });
 
-test('getProductInfoPDFurl returns false when throwing', (t) => {
-  const testProduct = new IcecatProduct(icecatProductJSONFound, icecatProductXMLFound, requestUrl);
+test('getShortDescription returns false when throwing', () => {
   delete testProduct.productData; // Will product null reference error
-  t.is(testProduct.getProductInfoPDFurl(), false);
+  expect(testProduct.getShortDescription()).toBe(false);
 });
 
-test('Found - Product values - Product manual PDF url', (t) => {
-  const testProduct = new IcecatProduct(icecatProductJSONFound, icecatProductXMLFound, requestUrl);
-  t.is(testProduct.getProductManualPDFurl(), 'http://pdfs.icecat.biz/pdf/48068167-5566-manual.pdf');
+test('Found - Product values - Product info PDF url', () => {
+  expect(testProduct.getProductInfoPDFurl()).toBe('');
 });
 
-test('getProductManualPDFurl returns false when throwing', (t) => {
-  const testProduct = new IcecatProduct(icecatProductJSONFound, icecatProductXMLFound, requestUrl);
+test('getProductInfoPDFurl returns false when throwing', () => {
   delete testProduct.productData; // Will product null reference error
-  t.is(testProduct.getProductManualPDFurl(), false);
+  expect(testProduct.getProductInfoPDFurl()).toBe(false);
 });
 
-test('Found - Product values - Supplier', (t) => {
-  const testProduct = new IcecatProduct(icecatProductJSONFound, icecatProductXMLFound, requestUrl);
-  t.is(testProduct.getSupplier(), 'iiyama');
+test('Found - Product values - Product manual PDF url', () => {
+  expect(testProduct.getProductManualPDFurl()).toBe('');
 });
 
-test('Found - Product values - Category', (t) => {
-  const testProduct = new IcecatProduct(icecatProductJSONFound, icecatProductXMLFound, requestUrl);
-  t.is(testProduct.getCategory(), 'public displays');
+test('getProductManualPDFurl returns false when throwing', () => {
+  delete testProduct.productData; // Will product null reference error
+  expect(testProduct.getProductManualPDFurl()).toBe(false);
 });
 
-test('Found - Product values - Family', (t) => {
-  const testProduct = new IcecatProduct(icecatProductJSONFound, icecatProductXMLFound, requestUrl);
+test('Found - Product values - Supplier', () => {
+  expect(testProduct.getSupplier()).toBe('HP');
+});
+
+test('Found - Product values - Category', () => {
+  expect(testProduct.getCategory()).toBe('Computer Monitors');
+});
+
+test('Found - Product values - Family', () => {
   testProduct.productData.ProductFamily = [
     {
       Name: [
@@ -122,441 +105,786 @@ test('Found - Product values - Family', (t) => {
       ]
     }
   ];
-  t.deepEqual(testProduct.getFamily(), {
+  expect(testProduct.getFamily()).toEqual({
     id: '1',
     name: 'Test'
   });
 });
 
-test('getFamily returns false when throwing', (t) => {
-  const testProduct = new IcecatProduct(icecatProductJSONFound, icecatProductXMLFound, requestUrl);
+test('getFamily returns false when throwing', () => {
   delete testProduct.productData; // Will product null reference error
-  t.is(testProduct.getFamily(), false);
+  expect(testProduct.getFamily()).toBe(false);
 });
 
-test('Found - Product values - Name', (t) => {
-  const testProduct = new IcecatProduct(icecatProductJSONFound, icecatProductXMLFound, requestUrl);
-  t.is(testProduct.getName(), 'X4071UHSU-B1');
+test('Found - Product values - Name', () => {
+  expect(testProduct.getName()).toBe('E273m');
 });
 
-test('Found - Product values - Url', (t) => {
-  const testProduct = new IcecatProduct(icecatProductJSONFound, icecatProductXMLFound, requestUrl);
-  t.is(testProduct.getProductUrl(), 'http://www.iiyama.com/gl_en/products/prolite-x4071uhsu-b1/');
+test('Found - Product values - Url', () => {
+  expect(testProduct.getProductUrl()).toBe('http://www.hp.com/');
 });
 
-test('Found - Product values - EAN', (t) => {
-  const testProduct = new IcecatProduct(icecatProductJSONFound, icecatProductXMLFound, requestUrl);
-  t.is(testProduct.getEan(), '4948570114344');
+test('Found - Product values - EAN', () => {
+  expect(testProduct.getEan()).toBe('0190781289012');
 });
 
-test('Found - Product values - productUrl', (t) => {
-  const testProduct = new IcecatProduct(icecatProductJSONFound, icecatProductXMLFound, requestUrl);
-  t.is(testProduct.getProductUrl(), 'http://www.iiyama.com/gl_en/products/prolite-x4071uhsu-b1/');
+test('Found - Product values - productUrl', () => {
+  expect(testProduct.getProductUrl()).toBe('http://www.hp.com/');
 });
 
-test('getProductUrl returns false when throwing', (t) => {
-  const testProduct = new IcecatProduct(icecatProductJSONFound, icecatProductXMLFound, requestUrl);
+test('getProductUrl returns false when throwing', () => {
   delete testProduct.productData; // Will product null reference error
-  t.is(testProduct.getProductUrl(), false);
+  expect(testProduct.getProductUrl()).toBe(false);
 });
 
-test('Found - Product values - Error message', (t) => {
-  const testProduct = new IcecatProduct(icecatProductJSONFound, icecatProductXMLFound, requestUrl);
-  t.falsy(testProduct.getErrorMessage(), 'No errors when succeeding');
+test('Found - Product values - Error message', () => {
+  expect(testProduct.getErrorMessage()).toBeFalsy();
 });
 
-test('Found - Product values - Multimedia Objects', (t) => {
-  const testProduct = new IcecatProduct(icecatProductJSONFound, icecatProductXMLFound, requestUrl);
-  t.deepEqual(testProduct.getMultimediaObjects(), [
+test('Found - Product values - Multimedia Objects', () => {
+  expect(testProduct.getMultimediaObjects()).toEqual([
     {
       contentType: 'image/png',
       description: 'EU Energy Label',
       thumbPic: undefined,
       keepAsURL: '0',
-      size: '26873',
-      url: 'http://objects.icecat.biz/objects/mmo_29900045_1466759173_0229_548.png'
+      size: '46483',
+      url: 'https://objects.icecat.biz/objects/mmo_39302897_1624376119_047_47638.png'
     }
   ]);
 });
 
-test('getMultimedia objects returns false when throwing', (t) => {
-  const testProduct = new IcecatProduct(icecatProductJSONFound, icecatProductXMLFound, requestUrl);
+test('getMultimedia objects returns false when throwing', () => {
   delete testProduct.productData; // Will product null reference error
-  t.is(testProduct.getMultimediaObjects(), false);
+  expect(testProduct.getMultimediaObjects()).toBe(false);
 });
 
-test('Found - Product values - Images', (t) => {
-  const testProduct = new IcecatProduct(icecatProductJSONFound, icecatProductXMLFound, requestUrl);
-  t.deepEqual(testProduct.getImages(), [
+test('Found - Product values - Images', () => {
+  expect(testProduct.getImages()).toEqual([
     {
       IsMain: 'Y',
-      HighImg: 'http://images.icecat.biz/img/gallery/29900045_1198.jpg',
-      LowImg: 'http://images.icecat.biz/img/gallery_lows/29900045_1198.jpg',
-      ThumbImg: 'http://images.icecat.biz/img/gallery_thumbs/29900045_1198.jpg'
+      HighImg: 'https://images.icecat.biz/img/gallery/39302897_3599208444.jpg',
+      LowImg: 'https://images.icecat.biz/img/gallery_lows/39302897_3599208444.jpg',
+      ThumbImg: 'https://images.icecat.biz/img/gallery_thumbs/39302897_3599208444.jpg'
     },
     {
       IsMain: undefined,
-      HighImg: 'http://images.icecat.biz/img/gallery/29900045_3889.jpg',
-      LowImg: 'http://images.icecat.biz/img/gallery_lows/29900045_3889.jpg',
-      ThumbImg: 'http://images.icecat.biz/img/gallery_thumbs/29900045_3889.jpg'
+      HighImg: 'https://images.icecat.biz/img/gallery/39302897_1075617243.jpg',
+      LowImg: 'https://images.icecat.biz/img/gallery_lows/39302897_1075617243.jpg',
+      ThumbImg: 'https://images.icecat.biz/img/gallery_thumbs/39302897_1075617243.jpg'
     },
     {
       IsMain: undefined,
-      HighImg: 'http://images.icecat.biz/img/gallery/29900045_6765.jpg',
-      LowImg: 'http://images.icecat.biz/img/gallery_lows/29900045_6765.jpg',
-      ThumbImg: 'http://images.icecat.biz/img/gallery_thumbs/29900045_6765.jpg'
+      HighImg: 'https://images.icecat.biz/img/gallery/39302897_6442797154.jpg',
+      LowImg: 'https://images.icecat.biz/img/gallery_lows/39302897_6442797154.jpg',
+      ThumbImg: 'https://images.icecat.biz/img/gallery_thumbs/39302897_6442797154.jpg'
     },
     {
       IsMain: undefined,
-      HighImg: 'http://images.icecat.biz/img/gallery/29900045_0569.jpg',
-      LowImg: 'http://images.icecat.biz/img/gallery_lows/29900045_0569.jpg',
-      ThumbImg: 'http://images.icecat.biz/img/gallery_thumbs/29900045_0569.jpg'
+      HighImg: 'https://images.icecat.biz/img/gallery/39302897_0881622298.jpg',
+      LowImg: 'https://images.icecat.biz/img/gallery_lows/39302897_0881622298.jpg',
+      ThumbImg: 'https://images.icecat.biz/img/gallery_thumbs/39302897_0881622298.jpg'
     },
     {
       IsMain: undefined,
-      HighImg: 'http://images.icecat.biz/img/gallery/29900045_5438.jpg',
-      LowImg: 'http://images.icecat.biz/img/gallery_lows/29900045_5438.jpg',
-      ThumbImg: 'http://images.icecat.biz/img/gallery_thumbs/29900045_5438.jpg'
+      HighImg: 'https://images.icecat.biz/img/gallery/39302897_4651978094.jpg',
+      LowImg: 'https://images.icecat.biz/img/gallery_lows/39302897_4651978094.jpg',
+      ThumbImg: 'https://images.icecat.biz/img/gallery_thumbs/39302897_4651978094.jpg'
     },
     {
       IsMain: undefined,
-      HighImg: 'http://images.icecat.biz/img/gallery/29900045_9148.jpg',
-      LowImg: 'http://images.icecat.biz/img/gallery_lows/29900045_9148.jpg',
-      ThumbImg: 'http://images.icecat.biz/img/gallery_thumbs/29900045_9148.jpg'
+      HighImg: 'https://images.icecat.biz/img/feature_logo/193-367.png',
+      LowImg: '',
+      ThumbImg: 'https://images.icecat.biz/img/feature_logo_thumbs/193-367.png'
     },
     {
       IsMain: undefined,
-      HighImg: 'http://images.icecat.biz/img/gallery/29900045_7312.jpg',
-      LowImg: 'http://images.icecat.biz/img/gallery_lows/29900045_7312.jpg',
-      ThumbImg: 'http://images.icecat.biz/img/gallery_thumbs/29900045_7312.jpg'
+      HighImg: 'https://images.icecat.biz/img/feature_logo/216-1837.png',
+      LowImg: '',
+      ThumbImg: 'https://images.icecat.biz/img/feature_logo_thumbs/216-1837.png'
     },
     {
       IsMain: undefined,
-      HighImg: 'http://images.icecat.biz/img/gallery/29900045_6984.jpg',
-      LowImg: 'http://images.icecat.biz/img/gallery_lows/29900045_6984.jpg',
-      ThumbImg: 'http://images.icecat.biz/img/gallery_thumbs/29900045_6984.jpg'
+      HighImg: 'https://images.icecat.biz/img/feature_logo/195-7422.png',
+      LowImg: '',
+      ThumbImg: 'https://images.icecat.biz/img/feature_logo_thumbs/195-7422.png'
     },
     {
       IsMain: undefined,
-      HighImg: 'http://images.icecat.biz/img/gallery/29900045_6068.jpg',
-      LowImg: 'http://images.icecat.biz/img/gallery_lows/29900045_6068.jpg',
-      ThumbImg: 'http://images.icecat.biz/img/gallery_thumbs/29900045_6068.jpg'
+      HighImg: 'https://images.icecat.biz/img/feature_logo/225-9265.png',
+      LowImg: '',
+      ThumbImg: 'https://images.icecat.biz/img/feature_logo_thumbs/225-9265.png'
     },
     {
       IsMain: undefined,
-      HighImg: 'http://images.icecat.biz/img/gallery/29900045_4628.jpg',
-      LowImg: 'http://images.icecat.biz/img/gallery_lows/29900045_4628.jpg',
-      ThumbImg: 'http://images.icecat.biz/img/gallery_thumbs/29900045_4628.jpg'
+      HighImg: 'https://images.icecat.biz/img/feature_logo/217-3037.png',
+      LowImg: '',
+      ThumbImg: 'https://images.icecat.biz/img/feature_logo_thumbs/217-3037.png'
     },
     {
       IsMain: undefined,
-      HighImg: 'http://images.icecat.biz/img/gallery/29900045_9043.jpg',
-      LowImg: 'http://images.icecat.biz/img/gallery_lows/29900045_9043.jpg',
-      ThumbImg: 'http://images.icecat.biz/img/gallery_thumbs/29900045_9043.jpg'
+      HighImg: 'https://images.icecat.biz/img/feature_logo/233-5697.png',
+      LowImg: '',
+      ThumbImg: 'https://images.icecat.biz/img/feature_logo_thumbs/233-5697.png'
     },
     {
       IsMain: undefined,
-      HighImg: 'http://images.icecat.biz/img/gallery/29900045_6129.jpg',
-      LowImg: 'http://images.icecat.biz/img/gallery_lows/29900045_6129.jpg',
-      ThumbImg: 'http://images.icecat.biz/img/gallery_thumbs/29900045_6129.jpg'
+      HighImg: 'https://images.icecat.biz/img/feature_logo/191-6546.png',
+      LowImg: '',
+      ThumbImg: 'https://images.icecat.biz/img/feature_logo_thumbs/191-6546.png'
+    },
+    {
+      IsMain: undefined,
+      HighImg: 'https://images.icecat.biz/img/feature_logo/211-8810.png',
+      LowImg: '',
+      ThumbImg: 'https://images.icecat.biz/img/feature_logo_thumbs/211-8810.png'
     }
   ]);
 });
 
-test('Found - Product values - Images missing 1', (t) => {
-  const testProduct = new IcecatProduct(icecatProductJSONFound, icecatProductXMLFound, requestUrl);
+test('Found - Product values - Images missing 1', () => {
   testProduct.productData.ProductGallery[0].ProductPicture = [];
 
-  t.deepEqual(testProduct.getImages(), undefined);
+  expect(testProduct.getImages()).toEqual(undefined);
 });
 
-test('Found - Product values - Images missing 2', (t) => {
-  const testProduct = new IcecatProduct(icecatProductJSONFound, icecatProductXMLFound, requestUrl);
+test('Found - Product values - Images missing 2', () => {
   testProduct.productData.ProductGallery = [];
 
-  t.deepEqual(testProduct.getImages(), undefined);
+  expect(testProduct.getImages()).toEqual(undefined);
 });
 
-test('Found - Product values - ProductGallery missing', (t) => {
-  const testProduct = new IcecatProduct(icecatProductJSONFound, icecatProductXMLFound, requestUrl);
+test('Found - Product values - ProductGallery missing', () => {
   delete testProduct.productData.ProductGallery;
 
-  t.deepEqual(testProduct.getImages(), undefined);
+  expect(testProduct.getImages()).toEqual(undefined);
 });
 
-test('Found - Product values - Specifications', (t) => {
-  const testProduct = new IcecatProduct(icecatProductJSONFound, icecatProductXMLFound, requestUrl);
-  t.deepEqual(testProduct.getSpecifications(), [
+test('Found - Product values - Specifications', () => {
+  expect(testProduct.getSpecifications()).toEqual([
     {
       name: 'Display diagonal',
-      presentationValue: '100.3 cm (39.5")',
-      value: '39.5',
-      specId: '87016',
-      specGroupId: '10074'
+      presentationValue: '68.6 cm (27")',
+      value: '27',
+      specId: '11608',
+      specGroupId: '100'
     },
-    { name: 'Display type', presentationValue: 'LED', value: 'LED', specId: '87015', specGroupId: '10074' },
     {
       name: 'Display resolution',
-      presentationValue: '3840 x 2160 pixels',
-      value: '3840 x 2160',
-      specId: '87018',
-      specGroupId: '10074'
+      presentationValue: '1920 x 1080 pixels',
+      value: '1920 x 1080',
+      specId: '9316',
+      specGroupId: '100'
     },
-    { name: 'Display brightness', presentationValue: '350 cd/m²', value: '350', specId: '87020', specGroupId: '10074' },
-    { name: 'HD type', presentationValue: '4K Ultra HD', value: '4K Ultra HD', specId: '87084', specGroupId: '10074' },
-    { name: 'Response time', presentationValue: '3 ms', value: '3', specId: '87085', specGroupId: '10074' },
+    {
+      name: 'Native aspect ratio',
+      presentationValue: '16:9',
+      value: '16:9',
+      specId: '155124',
+      specGroupId: '100'
+    },
+    {
+      name: 'Display technology',
+      presentationValue: 'LED',
+      value: 'LED',
+      specId: '57158',
+      specGroupId: '100'
+    },
+    {
+      name: 'Touchscreen',
+      presentationValue: 'N',
+      value: 'N',
+      specId: '243713',
+      specGroupId: '100'
+    },
+    {
+      name: 'HD type',
+      presentationValue: 'Full HD',
+      value: 'Full HD',
+      specId: '74099',
+      specGroupId: '100'
+    },
+    {
+      name: 'Panel type',
+      presentationValue: 'IPS',
+      value: 'IPS',
+      specId: '255240',
+      specGroupId: '100'
+    },
+    {
+      name: 'Screen shape',
+      presentationValue: 'Flat',
+      value: 'Flat screen',
+      specId: '133269',
+      specGroupId: '100'
+    },
     {
       name: 'Contrast ratio (typical)',
-      presentationValue: '5000:1',
-      value: '5000:1',
-      specId: '87026',
-      specGroupId: '10074'
+      presentationValue: '1000:1',
+      value: '1000:1',
+      specId: '4943',
+      specGroupId: '100'
+    },
+    {
+      name: 'Display number of colours',
+      presentationValue: '16.78 million colours',
+      value: '16.78 million colours',
+      specId: '154116',
+      specGroupId: '100'
+    },
+    {
+      name: 'Display brightness (typical)',
+      presentationValue: '250 cd/m²',
+      value: '250',
+      specId: '255214',
+      specGroupId: '100'
+    },
+    {
+      name: 'Response time',
+      presentationValue: '5 ms',
+      value: '5',
+      specId: '5285',
+      specGroupId: '100'
+    },
+    {
+      name: 'Supported graphics resolutions',
+      presentationValue:
+        '640 x 480 (VGA), 720 x 400, 800 x 600 (SVGA), 1024 x 768 (XGA), 1280 x 1024 (SXGA), 1280 x 720 (HD 720), 1280 x 800 (WXGA), 1440 x 900 (WXGA+), 1600 x 900, 1680 x 1050 (WSXGA+)',
+      value:
+        '640 x 480 (VGA),720 x 400,800 x 600 (SVGA),1024 x 768 (XGA),1280 x 1024 (SXGA),1280 x 720 (HD 720),1280 x 800 (WXGA),1440 x 900 (WXGA+),1600 x 900,1680 x 1050 (WSXGA+)',
+      specId: '22829',
+      specGroupId: '100'
     },
     {
       name: 'Contrast ratio (dynamic)',
-      presentationValue: '12000000:1',
-      value: '12000000:1',
-      specId: '87027',
-      specGroupId: '10074'
+      presentationValue: '5000000:1',
+      value: '5000000:1',
+      specId: '31337',
+      specGroupId: '100'
     },
     {
       name: 'Viewing angle, horizontal',
       presentationValue: '178°',
       value: '178',
-      specId: '87028',
-      specGroupId: '10074'
+      specId: '4940',
+      specGroupId: '100'
     },
-    { name: 'Viewing angle, vertical', presentationValue: '178°', value: '178', specId: '87029', specGroupId: '10074' },
     {
-      name: 'Display number of colours',
-      presentationValue: '1.073 billion colours',
-      value: '1.073 billion colours',
-      specId: '154124',
-      specGroupId: '10074'
+      name: 'Viewing angle, vertical',
+      presentationValue: '178°',
+      value: '178',
+      specId: '4941',
+      specGroupId: '100'
+    },
+    {
+      name: '3D',
+      presentationValue: 'N',
+      value: 'N',
+      specId: '47973',
+      specGroupId: '100'
     },
     {
       name: 'Pixel pitch',
-      presentationValue: '0.229 x 0.225 mm',
-      value: '0.229 x 0.225',
-      specId: '87031',
-      specGroupId: '10074'
-    },
-    {
-      name: 'Active display area (W x H)',
-      presentationValue: '485.35 x 878.11 mm',
-      value: '485.35 x 878.11',
-      specId: '91968',
-      specGroupId: '10074'
-    },
-    {
-      name: 'Display diagonal (metric)',
-      presentationValue: '100.3 cm',
-      value: '100.3',
-      specId: '87017',
-      specGroupId: '10074'
+      presentationValue: '0.311 x 0.311 mm',
+      value: '0.311 x 0.311',
+      specId: '1992',
+      specGroupId: '100'
     },
     {
       name: 'Horizontal scan range',
-      presentationValue: '30 - 135 kHz',
-      value: '30 - 135',
-      specId: '87080',
-      specGroupId: '10074'
+      presentationValue: '30 - 80 kHz',
+      value: '30 - 80',
+      specId: '2548',
+      specGroupId: '100'
     },
     {
       name: 'Vertical scan range',
-      presentationValue: '24 - 75 Hz',
-      value: '24 - 75',
-      specId: '87081',
-      specGroupId: '10074'
+      presentationValue: '50 - 60 Hz',
+      value: '50 - 60',
+      specId: '4931',
+      specGroupId: '100'
     },
     {
-      name: 'Supported graphics resolutions',
-      presentationValue: '1920 x 1080 (HD 1080), 2048 x 1152, 2560 x 1440, 3840 x 2160',
-      value: '1920 x 1080 (HD 1080),2048 x 1152,2560 x 1440,3840 x 2160',
-      specId: '87119',
-      specGroupId: '10074'
+      name: 'Viewable size, horizontal',
+      presentationValue: '59.8 cm',
+      value: '597.8',
+      specId: '4938',
+      specGroupId: '100'
     },
-    { name: 'Native aspect ratio', presentationValue: '16:9', value: '16:9', specId: '87127', specGroupId: '10074' },
-    { name: 'Touchscreen', presentationValue: 'N', value: 'N', specId: '92129', specGroupId: '10074' },
-    { name: 'Ethernet LAN', presentationValue: 'N', value: 'N', specId: '87024', specGroupId: '10083' },
-    { name: 'HDMI ports quantity', presentationValue: '3', value: '3', specId: '87083', specGroupId: '10083' },
-    { name: 'DVI port', presentationValue: 'N', value: 'N', specId: '87066', specGroupId: '10083' },
-    { name: 'VGA (D-Sub) input ports', presentationValue: '1', value: '1', specId: '87065', specGroupId: '10083' },
-    { name: 'HDMI in', presentationValue: '3', value: '3', specId: '94285', specGroupId: '10083' },
-    { name: 'USB port', presentationValue: 'Y', value: 'Y', specId: '87100', specGroupId: '10083' },
     {
-      name: 'USB version',
-      presentationValue: '3.0 (3.1 Gen 1)',
-      value: '3.0 (3.1 Gen 1)',
-      specId: '87129',
-      specGroupId: '10083'
+      name: 'Viewable size, vertical',
+      presentationValue: '33.6 cm',
+      value: '336.3',
+      specId: '4939',
+      specGroupId: '100'
     },
-    { name: 'USB ports quantity', presentationValue: '3', value: '3', specId: '87130', specGroupId: '10083' },
-    { name: 'DisplayPorts quantity', presentationValue: '1', value: '1', specId: '87329', specGroupId: '10083' },
-    { name: 'TV tuner integrated', presentationValue: 'N', value: 'N', specId: '87057', specGroupId: '10870' },
-    { name: 'Picture-in-Picture', presentationValue: 'Y', value: 'Y', specId: '87021', specGroupId: '10870' },
-    { name: 'HDCP', presentationValue: 'Y', value: 'Y', specId: '87063', specGroupId: '10870' },
-    { name: 'Number of OSD languages', presentationValue: '10', value: '10', specId: '87133', specGroupId: '10870' },
+    {
+      name: 'RGB colour space',
+      presentationValue: 'NTSC',
+      value: 'NTSC',
+      specId: '594926',
+      specGroupId: '100'
+    },
+    {
+      name: 'Colour gamut',
+      presentationValue: '72%',
+      value: '72',
+      specId: '103146',
+      specGroupId: '100'
+    },
+    {
+      name: 'NVIDIA G-SYNC',
+      presentationValue: 'N',
+      value: 'N',
+      specId: '123176',
+      specGroupId: '10681'
+    },
+    {
+      name: 'AMD FreeSync',
+      presentationValue: 'N',
+      value: 'N',
+      specId: '193707',
+      specGroupId: '10681'
+    },
+    {
+      name: 'Built-in speaker(s)',
+      presentationValue: 'Y',
+      value: 'Y',
+      specId: '31341',
+      specGroupId: '10887'
+    },
+    {
+      name: 'Built-in camera',
+      presentationValue: 'Y',
+      value: 'Y',
+      specId: '67278',
+      specGroupId: '10887'
+    },
+    {
+      name: 'Number of speakers',
+      presentationValue: '2',
+      value: '2',
+      specId: '207681',
+      specGroupId: '10887'
+    },
+    {
+      name: 'RMS rated power',
+      presentationValue: '4 W',
+      value: '4',
+      specId: '17100',
+      specGroupId: '10887'
+    },
+    {
+      name: 'Market positioning',
+      presentationValue: 'Business',
+      value: 'Business',
+      specId: '245761',
+      specGroupId: '10677'
+    },
+    {
+      name: 'Product colour',
+      presentationValue: 'Black, Silver',
+      value: 'Black,Silver',
+      specId: '11218',
+      specGroupId: '10677'
+    },
+    {
+      name: 'Country of origin',
+      presentationValue: 'China',
+      value: 'China',
+      specId: '114074',
+      specGroupId: '10677'
+    },
+    {
+      name: 'Built-in USB hub',
+      presentationValue: 'Y',
+      value: 'Y',
+      specId: '139339',
+      specGroupId: '1742'
+    },
+    {
+      name: 'USB hub version',
+      presentationValue: '3.2 Gen 1 (3.1 Gen 1)',
+      value: '3.2 Gen 1 (3.1 Gen 1)',
+      specId: '139340',
+      specGroupId: '1742'
+    },
+    {
+      name: 'USB upstream port type',
+      presentationValue: 'USB Type-C',
+      value: 'USB Type-C',
+      specId: '139342',
+      specGroupId: '1742'
+    },
+    {
+      name: 'Number of upstream ports',
+      presentationValue: '1',
+      value: '1',
+      specId: '139344',
+      specGroupId: '1742'
+    },
+    {
+      name: 'USB Type-A downstream ports quantity',
+      presentationValue: '2',
+      value: '2',
+      specId: '139347',
+      specGroupId: '1742'
+    },
+    {
+      name: 'VGA (D-Sub) ports quantity',
+      presentationValue: '1',
+      value: '1',
+      specId: '17095',
+      specGroupId: '1742'
+    },
+    {
+      name: 'DVI port',
+      presentationValue: 'N',
+      value: 'N',
+      specId: '86530',
+      specGroupId: '1742'
+    },
+    {
+      name: 'HDMI ports quantity',
+      presentationValue: '1',
+      value: '1',
+      specId: '20882',
+      specGroupId: '1742'
+    },
+    {
+      name: 'DisplayPorts quantity',
+      presentationValue: '1',
+      value: '1',
+      specId: '35722',
+      specGroupId: '1742'
+    },
+    {
+      name: 'Audio input',
+      presentationValue: 'Y',
+      value: 'Y',
+      specId: '17098',
+      specGroupId: '1742'
+    },
+    {
+      name: 'Audio output',
+      presentationValue: 'Y',
+      value: 'Y',
+      specId: '17099',
+      specGroupId: '1742'
+    },
+    {
+      name: 'HDCP',
+      presentationValue: 'Y',
+      value: 'Y',
+      specId: '26708',
+      specGroupId: '1742'
+    },
+    {
+      name: 'VESA mounting',
+      presentationValue: 'Y',
+      value: 'Y',
+      specId: '109688',
+      specGroupId: '3070'
+    },
+    {
+      name: 'Cable lock slot',
+      presentationValue: 'Y',
+      value: 'Y',
+      specId: '14296',
+      specGroupId: '3070'
+    },
+    {
+      name: 'Height adjustment',
+      presentationValue: 'Y',
+      value: 'Y',
+      specId: '68504',
+      specGroupId: '3070'
+    },
+    {
+      name: 'Panel mounting interface',
+      presentationValue: '100 x 100 mm',
+      value: '100 x 100',
+      specId: '22159',
+      specGroupId: '3070'
+    },
+    {
+      name: 'Height adjustment',
+      presentationValue: '15 cm',
+      value: '150',
+      specId: '39711',
+      specGroupId: '3070'
+    },
+    {
+      name: 'Pivot',
+      presentationValue: 'Y',
+      value: 'Y',
+      specId: '16130',
+      specGroupId: '3070'
+    },
+    {
+      name: 'Pivot angle',
+      presentationValue: '0 - 90°',
+      value: '0 - 90',
+      specId: '48001',
+      specGroupId: '3070'
+    },
+    {
+      name: 'Swivelling',
+      presentationValue: 'Y',
+      value: 'Y',
+      specId: '71482',
+      specGroupId: '3070'
+    },
+    {
+      name: 'Swivel angle range',
+      presentationValue: '-45 - 45°',
+      value: '-45 - 45',
+      specId: '9092',
+      specGroupId: '3070'
+    },
+    {
+      name: 'Tiltable',
+      presentationValue: 'Y',
+      value: 'Y',
+      specId: '683957',
+      specGroupId: '3070'
+    },
+    {
+      name: 'Tilt angle range',
+      presentationValue: '-5 - 22°',
+      value: '-5 - 22',
+      specId: '18150',
+      specGroupId: '3070'
+    },
     {
       name: 'On Screen Display (OSD) languages',
-      presentationValue: 'CHI (SIMPL), CHI (TR), CZE, German, Dutch, English, French, Italian, JPN, POL, Romanian',
-      value: 'CHI (SIMPL),CHI (TR),CZE,DEU,DUT,ENG,FRE,ITA,JPN,POL,RUM',
-      specId: '87134',
-      specGroupId: '10870'
-    },
-    { name: 'Plug and Play', presentationValue: 'Y', value: 'Y', specId: '87092', specGroupId: '10870' },
-    { name: 'Colour of product', presentationValue: 'Black', value: 'Black', specId: '87019', specGroupId: '10869' },
-    { name: 'VESA mounting', presentationValue: 'Y', value: 'Y', specId: '102550', specGroupId: '10869' },
-    {
-      name: 'VESA mounting interfaces',
-      presentationValue: '400 x 200 mm',
-      value: '400 x 200',
-      specId: '87047',
-      specGroupId: '10869'
+      presentationValue:
+        'Simplified Chinese, Traditional Chinese, German, Dutch, English, Spanish, French, Italian, Japanese, Portuguese',
+      value: 'CHI (SIMPL),CHI (TR),DEU,DUT,ENG,ESP,FRE,ITA,JPN,POR',
+      specId: '22175',
+      specGroupId: '3070'
     },
     {
-      name: 'Placement supported',
-      presentationValue: 'Vertical',
-      value: 'Vertical',
-      specId: '87128',
-      specGroupId: '10869'
+      name: 'Plug and Play',
+      presentationValue: 'Y',
+      value: 'Y',
+      specId: '15669',
+      specGroupId: '3070'
     },
     {
-      name: 'Certification',
-      presentationValue: 'CE, TÜV-Bauart, VCCI-B, CU, PSE',
-      value: 'CE, TÜV-Bauart, VCCI-B, CU, PSE',
-      specId: '87023',
-      specGroupId: '10869'
+      name: 'Thin client installed',
+      presentationValue: 'N',
+      value: 'N',
+      specId: '48010',
+      specGroupId: '3289'
     },
-    { name: 'Built-in speaker(s)', presentationValue: 'Y', value: 'Y', specId: '87049', specGroupId: '10080' },
-    { name: 'RMS rated power', presentationValue: '12 W', value: '12', specId: '87051', specGroupId: '10080' },
     {
       name: 'Power consumption (typical)',
-      presentationValue: '60 W',
-      value: '60',
-      specId: '87053',
-      specGroupId: '10081'
+      presentationValue: '32 W',
+      value: '32',
+      specId: '9931',
+      specGroupId: '99'
     },
     {
       name: 'Power consumption (standby)',
       presentationValue: '0.5 W',
       value: '0.5',
-      specId: '87054',
-      specGroupId: '10081'
+      specId: '9930',
+      specGroupId: '99'
+    },
+    {
+      name: 'Power consumption (max)',
+      presentationValue: '68 W',
+      value: '68',
+      specId: '65572',
+      specGroupId: '99'
     },
     {
       name: 'AC input voltage',
       presentationValue: '100 - 240 V',
       value: '100 - 240',
-      specId: '87055',
-      specGroupId: '10081'
+      specId: '122959',
+      specGroupId: '99'
     },
     {
       name: 'AC input frequency',
-      presentationValue: '50/60 Hz',
-      value: '50/60',
-      specId: '87056',
-      specGroupId: '10081'
+      presentationValue: '50 - 60 Hz',
+      value: '50 - 60',
+      specId: '122960',
+      specGroupId: '99'
     },
-    { name: 'Energy efficiency class', presentationValue: 'B', value: 'B', specId: '87360', specGroupId: '10081' },
-    { name: 'Energy Star certified', presentationValue: 'N', value: 'N', specId: '87093', specGroupId: '10081' },
-    { name: 'Computer system', presentationValue: 'N', value: 'N', specId: '150573', specGroupId: '16263' },
-    { name: 'Width', presentationValue: '906.5 mm', value: '906.5', specId: '87011', specGroupId: '10073' },
-    { name: 'Depth', presentationValue: '238.5 mm', value: '238.5', specId: '87012', specGroupId: '10073' },
-    { name: 'Height', presentationValue: '577 mm', value: '577', specId: '87013', specGroupId: '10073' },
-    { name: 'Weight', presentationValue: '12.2 kg', value: '12200', specId: '87014', specGroupId: '10073' },
-    { name: 'Handheld remote control', presentationValue: 'Y', value: 'Y', specId: '87041', specGroupId: '10078' },
+    {
+      name: 'Annual energy consumption',
+      presentationValue: '46.72 kWh',
+      value: '46.72',
+      specId: '62854',
+      specGroupId: '99'
+    },
+    {
+      name: 'Operating temperature (T-T)',
+      presentationValue: '5 - 35 °C',
+      value: '5 - 35',
+      specId: '5557',
+      specGroupId: '1205'
+    },
+    {
+      name: 'Operating relative humidity (H-H)',
+      presentationValue: '20 - 80%',
+      value: '20 - 80',
+      specId: '4997',
+      specGroupId: '1205'
+    },
+    {
+      name: 'Sustainability certificates',
+      presentationValue: 'EPEAT Gold, ENERGY STAR',
+      value: 'EPEAT Gold,ENERGY STAR',
+      specId: '603799',
+      specGroupId: '72250'
+    },
+    {
+      name: 'Width (with stand)',
+      presentationValue: '610 mm',
+      value: '610',
+      specId: '22203',
+      specGroupId: '98'
+    },
+    {
+      name: 'Depth (with stand)',
+      presentationValue: '214 mm',
+      value: '214',
+      specId: '22162',
+      specGroupId: '98'
+    },
+    {
+      name: 'Height (with stand)',
+      presentationValue: '384 mm',
+      value: '384',
+      specId: '22171',
+      specGroupId: '98'
+    },
+    {
+      name: 'Weight (with stand)',
+      presentationValue: '7.9 kg',
+      value: '7900',
+      specId: '112042',
+      specGroupId: '98'
+    },
+    {
+      name: 'Width (without stand)',
+      presentationValue: '61 cm',
+      value: '610',
+      specId: '91400',
+      specGroupId: '98'
+    },
+    {
+      name: 'Depth (without stand)',
+      presentationValue: '4.75 cm',
+      value: '47.5',
+      specId: '91489',
+      specGroupId: '98'
+    },
+    {
+      name: 'Height (without stand)',
+      presentationValue: '38.9 cm',
+      value: '389',
+      specId: '91538',
+      specGroupId: '98'
+    },
+    {
+      name: 'Weight (without stand)',
+      presentationValue: '5.05 kg',
+      value: '5050',
+      specId: '684552',
+      specGroupId: '98'
+    },
     {
       name: 'Cables included',
-      presentationValue: 'AC, Audio (3.5mm), DisplayPort, HDMI, Mini DisplayPort, RS-232, USB',
-      value: 'AC,Audio (3.5mm),DisplayPort,HDMI,Mini DisplayPort,RS-232,USB',
-      specId: '87042',
-      specGroupId: '10078'
-    },
-    { name: 'Mounting kit', presentationValue: 'Y', value: 'Y', specId: '87045', specGroupId: '10078' },
-    { name: 'Quick start guide', presentationValue: 'Y', value: 'Y', specId: '87230', specGroupId: '10078' },
-    { name: '3D', presentationValue: 'N', value: 'N', specId: '87266', specGroupId: '10101' },
-    { name: 'AC (power) in', presentationValue: 'Y', value: 'Y', specId: '87267', specGroupId: '10101' },
-    { name: 'Aspect ratio', presentationValue: '16:9', value: '16:9', specId: '87271', specGroupId: '10101' },
-    { name: 'Built-in camera', presentationValue: 'N', value: 'N', specId: '87307', specGroupId: '10101' },
-    {
-      name: 'Cable lock slot',
-      presentationValue: 'Kensington',
-      value: 'Kensington',
-      specId: '87311',
-      specGroupId: '10101'
-    },
-    { name: 'Display', presentationValue: 'LED', value: 'LED', specId: '87325', specGroupId: '10101' },
-    { name: 'Display technology', presentationValue: 'MVA', value: 'MVA', specId: '87328', specGroupId: '10101' },
-    { name: 'EPEAT compliance', presentationValue: 'Silver', value: 'Silver', specId: '87361', specGroupId: '10101' },
-    {
-      name: 'Headphone connectivity',
-      presentationValue: '3.5 mm',
-      value: '3.5 mm',
-      specId: '87367',
-      specGroupId: '10101'
-    },
-    { name: 'Headphone outputs', presentationValue: '1', value: '1', specId: '87368', specGroupId: '10101' },
-    { name: 'Number of loudspeakers', presentationValue: '2', value: '2', specId: '87391', specGroupId: '10101' },
-    { name: 'On/off switch', presentationValue: 'Y', value: 'Y', specId: '87392', specGroupId: '10101' },
-    { name: 'Separate H/V sync', presentationValue: 'Y', value: 'Y', specId: '87423', specGroupId: '10101' },
-    {
-      name: 'USB 3.0 (3.1 Gen 1) ports quantity',
-      presentationValue: '3',
-      value: '3',
-      specId: '87438',
-      specGroupId: '10101'
+      presentationValue: 'AC, DisplayPort, USB Type-C to USB Type-A, VGA',
+      value: 'AC,DisplayPort,USB Type-C to USB Type-A,VGA',
+      specId: '16133',
+      specGroupId: '23760'
     },
     {
-      name: 'Viewable size, horizontal',
-      presentationValue: '48.5 cm',
-      value: '485.35',
-      specId: '87441',
-      specGroupId: '10101'
+      name: 'Harmonized System (HS) code',
+      presentationValue: '85285210',
+      value: '85285210',
+      specId: '711548',
+      specGroupId: '27535'
     },
     {
-      name: 'Viewable size, vertical',
-      presentationValue: '87.8 cm',
-      value: '878.11',
-      specId: '87442',
-      specGroupId: '10101'
+      name: 'Display',
+      presentationValue: 'LED',
+      value: 'LED',
+      specId: '3685',
+      specGroupId: '8454'
+    },
+    {
+      name: 'On/off switch',
+      presentationValue: 'Y',
+      value: 'Y',
+      specId: '65573',
+      specGroupId: '8454'
+    },
+    {
+      name: 'TV tuner integrated',
+      presentationValue: 'N',
+      value: 'N',
+      specId: '18144',
+      specGroupId: '8454'
+    },
+    {
+      name: 'Energy efficiency class (old)',
+      presentationValue: 'A',
+      value: 'A',
+      specId: '708253',
+      specGroupId: '8454'
     }
   ]);
 });
 
-test('Not found - Create Product', (t) => {
+test('Not found - Create Product', () => {
   const testProduct = new IcecatProduct(icecatProductJSONNotFound, icecatProductXMLNotFound, requestUrl);
-  t.truthy(testProduct instanceof IcecatProduct);
-  t.is(testProduct.requestUrl, requestUrl);
+  expect(testProduct instanceof IcecatProduct).toBeTruthy();
+  expect(testProduct.requestUrl).toBe(requestUrl);
 });
 
-test('Not found - Return code Fail', (t) => {
+test('Not found - Return code Fail', () => {
   const testProduct = new IcecatProduct(icecatProductJSONNotFound, icecatProductXMLNotFound, requestUrl);
-  t.is(testProduct.getReturnCode(), testProduct.returnCode.FAIL);
+  expect(testProduct.getReturnCode()).toBe(testProduct.returnCode.FAIL);
 });
 
-test('Found - Product values - Category feature groups', (t) => {
-  const testProduct = new IcecatProduct(icecatProductJSONFound, icecatProductXMLFound, requestUrl);
-  t.deepEqual(testProduct.getCategoryFeatureGroups(), [
-    { id: '10074', name: 'Display' },
-    { id: '10080', name: 'Audio' },
-    { id: '10083', name: 'Ports & interfaces' },
-    { id: '10073', name: 'Weight & dimensions' },
-    { id: '10081', name: 'Power' },
-    { id: '10084', name: 'Operational conditions' },
-    { id: '10871', name: 'Technical details' },
-    { id: '10078', name: 'Packaging data' },
-    { id: '10101', name: 'Other features' },
-    { id: '10869', name: 'Design' },
-    { id: '10870', name: 'Performance' },
-    { id: '16263', name: 'Computer system' }
+test('Found - Product values - Category feature groups', () => {
+  expect(testProduct.getCategoryFeatureGroups()).toEqual([
+    { id: '32003', name: 'Technical details' },
+    { id: '100', name: 'Display' },
+    { id: '1742', name: 'Ports & interfaces' },
+    { id: '98', name: 'Weight & dimensions' },
+    { id: '99', name: 'Power' },
+    { id: '1205', name: 'Operational conditions' },
+    { id: '65611', name: 'Network' },
+    { id: '23760', name: 'Packaging data' },
+    { id: '41676', name: 'Certificates' },
+    { id: '3070', name: 'Ergonomics' },
+    { id: '3289', name: 'Thin Client' },
+    { id: '49260', name: 'Packaging content' },
+    { id: '53731', name: 'Battery' },
+    { id: '26493', name: 'Brand-specific features' },
+    { id: '8454', name: 'Other features' },
+    { id: '10677', name: 'Design' },
+    { id: '10681', name: 'Performance' },
+    { id: '33683', name: 'Features' },
+    { id: '10887', name: 'Multimedia' },
+    { id: '27535', name: 'Logistics data' },
+    { id: '60227', name: 'Supplier features' },
+    { id: '27531', name: 'Recycling data' },
+    { id: '72250', name: 'Sustainability' }
   ]);
 });
 
-test('getCategoryFeatureGroups returns false if it throws', (t) => {
+test('getCategoryFeatureGroups returns false if it throws', () => {
   const testProduct = new IcecatProduct({ 'ICECAT-interface': { Product: [] } });
 
   const res = testProduct.getCategoryFeatureGroups();
 
-  t.false(res);
+  expect(res).toBe(false);
 });

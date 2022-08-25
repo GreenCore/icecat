@@ -3,9 +3,6 @@
 const fs = require('fs');
 const path = require('path');
 const PassThrough = require('stream').PassThrough;
-const sinon = require('sinon');
-const test = require('ava');
-
 const IcecatService = require('../lib/OpenCatalog/service');
 const IcecatProduct = require('../lib/OpenCatalog/product');
 
@@ -18,132 +15,108 @@ const instance = {
   lang: 'EN'
 };
 
-let sandbox;
-test.beforeEach(() => {
-  sandbox = sinon.createSandbox();
+let service;
+let mockRequestProduct;
+beforeEach(() => {
+  jest.restoreAllMocks();
+  service = new IcecatService(instance);
+  mockRequestProduct = jest.spyOn(service, '_requestProduct').mockResolvedValue({});
 });
 
-test.afterEach(() => {
-  sandbox.restore();
-});
-
-test('_getBaseUrl returns correct base URL', (t) => {
+test('_getBaseUrl returns correct base URL', () => {
   const service = new IcecatService(instance);
   const expectedUrl = `${instance.scheme}${instance.httpAuth}@${instance.httpUrl}?lang=${instance.lang};output=productxml`;
-  t.is(service._getBaseUrl(instance.lang), expectedUrl);
+  expect(service._getBaseUrl(instance.lang)).toBe(expectedUrl);
 });
 
-test.serial('getProduct calls correct url', (t) => {
-  const service = new IcecatService(instance);
-  sandbox.stub(service, '_requestProduct');
-
+test('getProduct calls correct url', () => {
   const lang = 'EN';
   const barcode = '123';
   service.getProduct(lang, barcode);
 
   const expectedUrl = service._getBaseUrl(lang) + `;ean_upc=${barcode}`;
 
-  t.truthy(service._requestProduct.calledWith(expectedUrl));
+  expect(service._requestProduct).toBeCalledWith(expectedUrl);
 });
 
-test.serial('getProductById calls correct url', (t) => {
-  const service = new IcecatService(instance);
-  sandbox.stub(service, '_requestProduct');
-
+test('getProductById calls correct url', () => {
   const lang = 'EN';
   const productId = '123';
   service.getProductById(lang, productId);
 
   const expectedUrl = service._getBaseUrl(lang) + `;product_id=${productId}`;
-  const callArg = service._requestProduct.getCall(0).args[0];
 
-  t.is(callArg, expectedUrl);
+  expect(mockRequestProduct).toBeCalledWith(expectedUrl);
 });
 
-test.serial('getProductBySKU calls correct url', (t) => {
-  const service = new IcecatService(instance);
-  sandbox.stub(service, '_requestProduct');
-
+test('getProductBySKU calls correct url', () => {
   const lang = 'EN';
   const brand = 'hp';
   const sku = 'RJ459AV';
   service.getProductBySKU(lang, brand, sku);
 
   const expectedUrl = service._getBaseUrl(lang) + ';prod_id=' + sku + ';vendor=' + brand;
-  const callArg = service._requestProduct.getCall(0).args[0];
 
-  t.is(callArg, expectedUrl);
+  expect(mockRequestProduct).toBeCalledWith(expectedUrl);
 });
 
-test.serial.cb('getProductByXMLdata can return IcecatProduct', (t) => {
+test('getProductByXMLdata can return IcecatProduct', async () => {
   const service = new IcecatService();
-  const promise = service.getProductByXMLdata(icecatProductXML);
 
-  promise.then((icecatProduct) => {
-    t.truthy(icecatProduct instanceof IcecatProduct);
-    t.end();
-  });
+  const icecatProduct = await service.getProductByXMLdata(icecatProductXML);
+  expect(icecatProduct instanceof IcecatProduct).toBeTruthy();
 });
 
-test('Sets icecat to empty object if initialised with nothing', (t) => {
+test('Sets icecat to empty object if initialised with nothing', () => {
   const service = new IcecatService();
-  t.deepEqual(service.icecat, {});
+  expect(service.icecat).toEqual({});
 });
 
-function isPromise(x) {
-  return x && x instanceof Promise;
-}
-
-test.serial('_requestProduct returns Promise', (t) => {
+test('_requestProduct can return IcecatProduct', async () => {
   const service = new IcecatService(instance);
-  sandbox.stub(service.https, 'get').returns({
-    on: () => {}
+
+  const responseStream = PassThrough();
+  service.https.get = jest.fn().mockImplementation((_url, cb) => {
+    cb(responseStream);
+
+    responseStream.emit('data', icecatProductXML);
+
+    responseStream.emit('end');
   });
 
-  t.truthy(isPromise(service._requestProduct()));
+  const icecatProduct = await service._requestProduct('');
+  expect(icecatProduct).toBeInstanceOf(IcecatProduct);
 });
 
-test.serial.cb('_requestProduct can return IcecatProduct', (t) => {
+test('_requestProduct can return error if unable to parse XML', async () => {
   const service = new IcecatService(instance);
-  const requestStream = new PassThrough();
-  sandbox.stub(service.https, 'get').returns(requestStream);
-  const responseStream = new PassThrough();
-  responseStream.write(icecatProductXML);
-  responseStream.end();
-  const promise = service._requestProduct('');
-  service.https.get.yield(responseStream);
-  promise.then((icecatProduct) => {
-    t.truthy(icecatProduct instanceof IcecatProduct);
-    t.end();
+  jest.spyOn(service, 'parseString');
+
+  const responseStream = PassThrough();
+  service.https.get = jest.fn().mockImplementation((_url, cb) => {
+    cb(responseStream);
+
+    responseStream.emit('data', '<wtfis></thisxml>');
+
+    responseStream.emit('end');
   });
+
+  expect(service._requestProduct('')).rejects.toThrow();
+  expect(service.parseString).toBeCalledTimes(1);
 });
 
-test.serial.cb('_requestProduct can return error if unable to parse XML', (t) => {
+test('_requestProduct resolves error if http call fails', async () => {
   const service = new IcecatService(instance);
-  const requestStream = new PassThrough();
-  sandbox.stub(service.https, 'get').returns(requestStream);
-  sandbox.spy(service, 'parseString');
-  const responseStream = new PassThrough();
-  responseStream.write('<wtfis></thisxml>');
-  responseStream.end();
-  const promise = service._requestProduct('');
-  service.https.get.yield(responseStream);
-  promise.catch(() => {
-    t.truthy(service.parseString.calledOnce);
-    t.end();
-  });
-});
+  const expectedError = 'OOPS';
 
-test.serial.cb('_requestProduct resolves error if http call fails', (t) => {
-  const service = new IcecatService(instance);
-  const requestStream = new PassThrough();
-  sandbox.stub(service.https, 'get').returns(requestStream);
+  const responseStream = PassThrough();
+  service.https.get = jest.fn().mockImplementation((_url, cb) => {
+    cb(responseStream);
 
-  const promise = service._requestProduct('');
-  const errObj = new Error('OOPS');
-  requestStream.emit('error', errObj);
-  promise.catch((error) => {
-    t.is(error, errObj);
-    t.end();
+    responseStream.emit('error', expectedError);
+
+    return responseStream;
   });
+
+  expect(service._requestProduct('')).rejects.toMatch(expectedError);
 });
